@@ -28,7 +28,11 @@
                         </button>
                     </li>
                     <li class="nav-item">
-                        <!-- Botón de Contacto -->
+                        <button id="chatbot-btn" class="btn btn-outline-light">
+                            <i class="fas fa-robot"></i> IA Chatbot
+                        </button>
+                    </li>
+                    <li class="nav-item">
                         <div class="contact-container">
                             <button id="contacto" class="btn btn-outline-light">
                                 <i class="fas fa-share-alt"></i> Contacto
@@ -56,11 +60,6 @@
     <!-- Imagen de marca de agua centrada -->
     <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
-    <!-- Botón para abrir el chatbot -->
-    <button id="chatbot" class="btn btn-outline-light">
-        <i class="fas fa-robot"></i> IA Chatbot
-    </button>
-    
     <!-- Contenedor del chatbot -->
     <div id="chat-container" style="display: none;">
         <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
@@ -79,7 +78,7 @@
             socialBox.style.display = socialBox.style.display === "none" ? "block" : "none";
         });
 
-        document.getElementById('chatbot').addEventListener('click', function () {
+        document.getElementById('chatbot-btn').addEventListener('click', function () {
             let chatBox = document.getElementById("chat-container");
             chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
         });
