@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -27,52 +28,173 @@
                         </button>
                     </li>
                     <li class="nav-item">
-                        <button id="contacto" class="btn btn-outline-light">
-                            <i class="fas fa-share-alt"></i> Contacto
-                        </button>
-                    </li>
-                    <li class="nav-item">
                         <button id="chatbot-btn" class="btn btn-outline-light">
                             <i class="fas fa-robot"></i> IA Chatbot
                         </button>
+                    </li>
+                    <li class="nav-item">
+                        <div class="contact-container">
+                            <button id="contacto" class="btn btn-outline-light">
+                                <i class="fas fa-share-alt"></i> Contacto
+                            </button>
+                            <div id="socials" class="social-container" style="display: none;">
+                                <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                                <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                                <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+                                <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Contenedor de redes sociales -->
-    <div id="socials" class="social-container" style="display: none;">
-        <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-        <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-        <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-    </div>
+    <!-- Sección de TecnoJaguar -->
+    <section class="hero">
+        <h1>TecnoJaguar</h1>
+    </section>
+    
+    <!-- Imagen de marca de agua centrada -->
+    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
     <!-- Contenedor del chatbot -->
-    <div id="chat-container" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
-        <div id="chat-body" style="height: 300px; overflow-y: auto; border-bottom: 1px solid #ccc; padding-bottom: 10px;"></div>
-        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." style="width: 100%; padding: 5px; margin-top: 10px;">
-        <button id="send-btn" class="btn btn-primary" style="width: 100%; margin-top: 5px;">Enviar</button>
+    <div id="chat-container" style="display: none;">
+        <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
+        <button id="send-btn">Enviar</button>
     </div>
 
     <!-- JavaScript -->
     <script>
-        document.getElementById('inicio').addEventListener('click', function () { 
-            window.location.assign("index.html"); 
-        }); 
+        // Redirigir a inicio 
+document.getElementById('inicio').addEventListener('click', function () { 
+    window.location.href = "index.html"; 
+}); 
 
-        document.getElementById('contacto').addEventListener('click', function () {
-            let socialBox = document.getElementById("socials");
-            socialBox.style.display = socialBox.style.display === "none" ? "block" : "none";
-        });
+        // Mostrar/ocultar redes sociales al hacer clic en el botón "Contacto"
+ddocument.getElementById('contacto').addEventListener('click', function () {
+    let socialBox = document.getElementById("socials");
+    socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
+});
+   
+  
 
-        document.getElementById('chatbot-btn').addEventListener('click', function () {
-            let chatBox = document.getElementById("chat-container");
-            chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
-        });
-    </script>
+// Agregar eventos a cada red social para abrir el enlace al hacer clic
+document.getElementById('facebook').addEventListener('click', function () {
+    window.open("http://www.facebook.com/tecnologicode.tuxtepec", "_blank");
+});
+
+document.getElementById('instagram').addEventListener('click', function () {
+    window.open("https://www.instagram.com/tecnm_tuxtepec", "_blank");
+});
+
+document.getElementById('whatsapp').addEventListener('click', function () {
+    window.open("https://wa.me/+522871104437", "_blank");
+});
+
+document.getElementById('youtube').addEventListener('click', function () {
+    window.open("https://www.youtube.com/@tecnologiconacionaldemexic7515", "_blank");
+});
+
+document.getElementById('twitter').addEventListener('click', function () {
+    window.open("https://x.com/ittuxtepec", "_blank");
+});
+
+document.getElementById('tiktok').addEventListener('click', function () {
+    window.open("https://www.tiktok.com/@tecnmcampustuxtepec?lang=es", "_blank");
+});
+
+// Mostrar/ocultar chatbot al hacer clic en el botón
+document.getElementById('chatbot').addEventListener('click', function () {
+    let chatBox = document.getElementById("chat-container");
+    chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
+});
+document.addEventListener("DOMContentLoaded", function () {
+    function procesarMensaje() {
+        let input = document.getElementById('chat-input');
+        let mensaje = input.value.toLowerCase().trim();
+        let chatBody = document.getElementById('chat-body');
+
+        if (mensaje) {
+            chatBody.innerHTML += `<div><b>Tú:</b> ${mensaje}</div>`;
+
+            let respuestaEncontrada = "Lo siento, no entiendo la pregunta.";
+
+            // Base de conocimiento con respuestas en botones desplegables
+            const respuestas = [
+                { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
+                { keywords: ["nuevo ingreso", "proceso de nuevo ingreso", "ficha"], respuesta: `
+                    <div class="dropdown">
+                        <button class="btn btn-primary">Elige una opción</button>
+                        <div class="dropdown-content">
+                            <a href="https://www.facebook.com/share/p/1HrDDd9Nnm/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://www.tuxtepec.tecnm.mx/procedimiento.html" target="_blank"><i class="fas fa-globe"></i> Aspirantes</a>
+                        </div>
+                    </div>` 
+                },
+                { keywords: ["contacto", "redes sociales"], respuesta: `
+                    <div class="dropdown">
+                        <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
+                        <div class="dropdown-content">
+                            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+                            <a href="https://instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://tiktok.com/@tecnmcampustuxtepec" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                        </div>
+                    </div>` 
+                },
+                { keywords: ["transferencia", "deposito", "numero de cuenta"], respuesta: `
+                    Claro, cualquier pago se puede hacer por transferencia o depósito a través de estas cuentas: 
+                    <a href="metodo-de-pago.jpeg" download="Metodo-de-pago.jpeg">
+                        <img src="metodo-de-pago.jpeg" alt="Método de pago" width="200">
+                    </a>
+                    <br>Haz clic en la imagen para descargar.
+                    O también puedes hacer el pago en la institución. 
+                    ⚠️ *Nota:* El pago es solo con tarjeta, **NO EFECTIVO**, excepto el último día del mes.
+                ` },
+                { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
+                { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" }
+            ];
+
+            for (let item of respuestas) {
+                if (item.keywords.some(keyword => mensaje.includes(keyword))) {
+                    respuestaEncontrada = item.respuesta;
+                    break;
+                }
+            }
+
+            setTimeout(() => {
+                chatBody.innerHTML += `<div><b>IA:</b> ${respuestaEncontrada}</div>`;
+                scrollToBottom();
+            }, 500);
+        }
+        
+        input.value = ''; // Limpiar input después de enviar
+        input.focus();
+    }
+
+    // Evento para enviar mensaje con el botón
+    document.getElementById('send-btn').addEventListener('click', procesarMensaje);
+
+    // Evento para enviar mensaje al presionar Enter
+    document.getElementById('chat-input').addEventListener('keydown', function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            procesarMensaje();
+        }
+    });
+
+    // Función para hacer scroll automático en el chat
+    function scrollToBottom() {
+        let chatBody = document.getElementById('chat-body');
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+});
+</script>
 </body>
 </html>
