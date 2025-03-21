@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -28,43 +27,35 @@
                         </button>
                     </li>
                     <li class="nav-item">
-                        <button id="chatbot-btn" class="btn btn-outline-light">
-                            <i class="fas fa-robot"></i> IA Chatbot
+                        <button id="contacto" class="btn btn-outline-light">
+                            <i class="fas fa-share-alt"></i> Contacto
                         </button>
                     </li>
                     <li class="nav-item">
-                        <div class="contact-container">
-                            <button id="contacto" class="btn btn-outline-light">
-                                <i class="fas fa-share-alt"></i> Contacto
-                            </button>
-                            <div id="socials" class="social-container" style="display: none;">
-                                <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                                <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                                <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                                <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-                                <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                            </div>
-                        </div>
+                        <button id="chatbot-btn" class="btn btn-outline-light">
+                            <i class="fas fa-robot"></i> IA Chatbot
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Sección de TecnoJaguar -->
-    <section class="hero">
-        <h1>TecnoJaguar</h1>
-    </section>
-    
-    <!-- Imagen de marca de agua centrada -->
-    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+    <!-- Contenedor de redes sociales -->
+    <div id="socials" class="social-container" style="display: none;">
+        <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+        <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
 
     <!-- Contenedor del chatbot -->
-    <div id="chat-container" style="display: none;">
-        <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
-        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
-        <button id="send-btn">Enviar</button>
+    <div id="chat-container" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <div id="chat-body" style="height: 300px; overflow-y: auto; border-bottom: 1px solid #ccc; padding-bottom: 10px;"></div>
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." style="width: 100%; padding: 5px; margin-top: 10px;">
+        <button id="send-btn" class="btn btn-primary" style="width: 100%; margin-top: 5px;">Enviar</button>
     </div>
 
     <!-- JavaScript -->
@@ -83,6 +74,5 @@
             chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
         });
     </script>
-
 </body>
 </html>
