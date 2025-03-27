@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="Logo 50 Aniversario TecNM Tuxtepec FINAL-05.png" alt="TecnoJaguar Logo">
+                <img src="cintillo final 50 aniversario mejorado.png" alt="TecnoJaguar Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -27,156 +27,92 @@
                             <i class="fas fa-home"></i> Inicio
                         </button>
                     </li>
-                   <!-- Botón de Contacto -->
-<div class="contact-container">
-    <button id="contacto" class="btn btn-outline-light">
-        <i class="fas fa-share-alt"></i> Contacto
-    </button>
-    <!-- Contenedor de redes sociales (debe estar dentro del mismo div) -->
-    <div id="socials" class="social-container">
-        <a id="facebook" href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank">
-            <i class="fab fa-facebook"></i> Facebook
-        </a>
-        <a id="instagram" href="https://www.instagram.com/tecnm_tuxtepec" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
-        </a>
-        <a id="whatsapp" href="https://wa.me/+522871104437" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        <a id="youtube" href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank">
-            <i class="fab fa-youtube"></i> YouTube
-        </a>
-        <a id="twitter" href="https://x.com/ittuxtepec" target="_blank">
-            <i class="fab fa-twitter"></i> X (Twitter)
-        </a>
-        <a id="tiktok" href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank">
-            <i class="fab fa-tiktok"></i> TikTok
-        </a>
-    </div>
-</div>
-
-                       <!-- Contenedor de redes sociales -->
-<div id="socials" class="social-container">
-    <a id="facebook" href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank">
-        <i class="fab fa-facebook"></i> Facebook
-    </a>
-    <a id="instagram" href="https://www.instagram.com/tecnm_tuxtepec" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a id="whatsapp" href="https://wa.me/+522871104437" target="_blank">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-    <a id="youtube" href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank">
-        <i class="fab fa-youtube"></i> YouTube
-    </a>
-    <a id="twitter" href="https://x.com/ittuxtepec" target="_blank">
-        <i class="fab fa-twitter"></i> X (Twitter)
-    </a>
-    <a id="tiktok" href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank">
-        <i class="fab fa-tiktok"></i> TikTok
-    </a>
-</div>
+                    <li class="nav-item">
+                        <button id="chatbot-btn" class="btn btn-outline-light">
+                            <i class="fas fa-robot"></i> IA Chatbot
+                        </button>
                     </li>
                     <li class="nav-item">
+                        <div class="contact-container">
+                            <button id="contacto" class="btn btn-outline-light">
+                                <i class="fas fa-share-alt"></i> Contacto
+                            </button>
+                            <div id="socials" class="social-container" style="display: none;">
+                                <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                                <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                                <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+                                <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-  <!-- Sección de TecnoJaguar -->
-  <section class="hero">
-    <h1>TecnoJaguar</h1>
-</section>
- <!-- Imagen de marca de agua centrada -->
-<img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
-    <!-- Botón para abrir el chatbot -->
-<button id="chatbot" class="btn btn-outline-light">
-    <i class="fas fa-robot"></i> IA Chatbot
-</button>
+    <!-- Sección de TecnoJaguar -->
+    <section class="hero">
+        <h1>TecnoJaguar</h1>
+    </section>
+    
+    <!-- Imagen de marca de agua centrada -->
+    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
-<div id="chat-container" style="display: none;">
-    <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
-    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
-    <button id="send-btn">Enviar</button>
-</div>
-<button id="chatbot">Abrir Chatbot</button>
-
+    <!-- Contenedor del chatbot -->
+    <div id="chat-container" style="display: none;">
+        <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
+        <button id="send-btn">Enviar</button>
+    </div>
 
     <!-- JavaScript -->
     <script>
-        // Redirigir a inicio 
-document.getElementById('inicio').addEventListener('click', function () { 
-    window.location.href = "index.html"; 
-}); 
+        document.getElementById('inicio').addEventListener('click', function () { 
+            window.location.href = "index.html"; 
+        }); 
 
-        // Mostrar/ocultar redes sociales al hacer clic en el botón "Contacto"
-document.getElementById('contacto').addEventListener('click', function () {
-    let socialBox = document.getElementById("socials");
-    socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
-});
-   
-  // Mostrar/ocultar chatbot al hacer clic en el botón
-document.getElementById('chatbot').addEventListener('click', function () {
-    let chatBox = document.getElementById("chat-container");
-    chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
-});
+        document.getElementById('contacto').addEventListener('click', function () {
+            let socialBox = document.getElementById("socials");
+            socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
+        });
 
-// Agregar eventos a cada red social para abrir el enlace al hacer clic
-document.getElementById('facebook').addEventListener('click', function () {
-    window.open("http://www.facebook.com/tecnologicode.tuxtepec", "_blank");
-});
+        document.getElementById('chatbot-btn').addEventListener('click', function () {
+            let chatBox = document.getElementById("chat-container");
+            chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
+        });
 
-document.getElementById('instagram').addEventListener('click', function () {
-    window.open("https://www.instagram.com/tecnm_tuxtepec", "_blank");
-});
+        document.addEventListener("DOMContentLoaded", function () {
+            function procesarMensaje() {
+                let input = document.getElementById('chat-input');
+                let mensaje = input.value.toLowerCase().trim();
+                let chatBody = document.getElementById('chat-body');
 
-document.getElementById('whatsapp').addEventListener('click', function () {
-    window.open("https://wa.me/+522871104437", "_blank");
-});
+                if (mensaje) {
+                    chatBody.innerHTML += `<div><b>Tú:</b> ${mensaje}</div>`;
 
-document.getElementById('youtube').addEventListener('click', function () {
-    window.open("https://www.youtube.com/@tecnologiconacionaldemexic7515", "_blank");
-});
-
-document.getElementById('twitter').addEventListener('click', function () {
-    window.open("https://x.com/ittuxtepec", "_blank");
-});
-
-document.getElementById('tiktok').addEventListener('click', function () {
-    window.open("https://www.tiktok.com/@tecnmcampustuxtepec?lang=es", "_blank");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Mostrar/Ocultar chatbot
-    document.getElementById('chatbot').addEventListener('click', function () {
-        let chatBox = document.getElementById("chat-container");
-        chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
-        document.getElementById('chat-input').focus();
-    });
-
-    function procesarMensaje() {
-        let input = document.getElementById('chat-input');
-        let mensaje = input.value.toLowerCase().trim();
-        let chatBody = document.getElementById('chat-body');
-
-        if (mensaje) {
-            chatBody.innerHTML += `<div><b>Tú:</b> ${mensaje}</div>`;
-
-            let respuestaEncontrada = "Lo siento, no entiendo la pregunta.";
-
-            // Base de conocimiento con respuestas en botones desplegables
-            const respuestas = [
-                { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
-                { keywords: ["nuevo ingreso", "proceso de nuevo ingreso", "ficha"], respuesta: `
-                    <div class="dropdown">
-                        <button class="btn btn-primary">Elige una opción</button>
-                        <div class="dropdown-content">
-                            <a href="https://www.facebook.com/share/p/1HrDDd9Nnm/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                            <a href="https://www.tuxtepec.tecnm.mx/procedimiento.html" target="_blank"><i class="fas fa-globe"></i> Aspirantes</a>
-                        </div>
-                    </div>` 
-                },
-                { keywords: ["contacto", "redes sociales"], respuesta: `
+                    let respuestaEncontrada = "Lo siento, no entiendo la pregunta.";
+                    const respuestas = [
+                        { keywords: ["carreras", "licenciatura", "ingeniería"], respuesta: `
+                            Ofrecemos las siguientes carreras:
+                            <ul>
+                                <li><a href="#">Ingeniería en Sistemas Computacionales</a></li>
+                                <li><a href="#">Ingeniería en Informática </a></li>
+                                <li><a href="#">Ingeniería en Electrónica</a></li>
+                                <li><a href="#">Ingeniería en Electromecánica</a></li>
+                                <li><a href="#">Ingeniería en Gestión Empresarial</a></li>
+                                <li><a href="#">Ingeniería Civil</a></li>
+                                <li><a href="#">Ingeniería en Bioquimica</a></li>
+                                <li><a href="#">Ingeniería en Desarrollo de Aplicaciones</a></li>
+                                <li><a href="#">Licenciatura en Contador Publico</a></li>
+                                <li><a href="#">Licenciatura en Administración</a></li>
+                            </ul>` },
+                        { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
+                        { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" },
+                        { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
+                        { keywords: ["especialidad"], respuesta: "Si contamos con una especialidad de Semiconductores" },   
+                        { keywords: ["contacto", "redes sociales", "contactar"], respuesta: `
                     <div class="dropdown">
                         <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
                         <div class="dropdown-content">
@@ -189,54 +125,65 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>` 
                 },
-                { keywords: ["transferencia", "deposito", "numero de cuenta"], respuesta: `
-                    Claro, cualquier pago se puede hacer por transferencia o depósito a través de estas cuentas: 
-                    <a href="metodo-de-pago.jpeg" download="Metodo-de-pago.jpeg">
-                        <img src="metodo-de-pago.jpeg" alt="Método de pago" width="200">
-                    </a>
-                    <br>Haz clic en la imagen para descargar.
-                    O también puedes hacer el pago en la institución. 
-                    ⚠️ *Nota:* El pago es solo con tarjeta, **NO EFECTIVO**, excepto el último día del mes.
-                ` },
-                { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
-                { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" }
-            ];
+                { keywords: ["examen de admisión","examen de admision"], respuesta: "el simulacro se llevara acabo el 17 de julio del 2025 y posteriormente el dia 18 de julio del presente año se llevara el examen" }, 
+                { keywords: ["curso de homogeneizacion"], respuesta: `
+                            Nuestro curso se llevará en dos modalidades: Escolarizada y Sabatina. ¿Qué modalidad llevaras?
+                            <br>
+                            <button class="btn btn-primary" onclick="responderCurso('Escolarizada')">📚 Escolarizada</button>
+                            <button class="btn btn-success" onclick="responderCurso('Sabatina')">📆 Sabatina</button>
+                        ` },
+                        { keywords: ["pagos", "costos"], respuesta: `
+                            Los pagos disponibles son:
+                            <ul>
+                                <li><i class="fas fa-file-invoice-dollar"></i> Ficha de Admisión</li>
+                                <li><i class="fas fa-book"></i> Curso de Homogeneización</li>
+                                <li><i class="fas fa-university"></i> Inscripción</li>
+                            </ul>` },
+                        { keywords: ["ficha de admision"], respuesta: `
+                            La ficha de admisión tiene un costo de $900.00 MXN (Para ambas modalidades).
+                            <br>
+                            <button class="btn btn-primary" onclick="responderPago('Ficha de Admisión')">📄 Pagar Ficha de Admisión</button>
+                        ` },
+                        { keywords: ["curso de homogeneizacion"], respuesta: `
+                            El curso de homogeneización tiene un costo de $1,500.00 MXN(Escolarizado) y $1,000(Escolarizado-Sabatino).
+                            <br>
+                            <button class="btn btn-success" onclick="responderPago('Curso de Homogeneización')">📚 Pagar Curso de Homogeneización</button>
+                        ` },
+                        { keywords: ["inscripcion"], respuesta: `
+                            La inscripción tiene un costo de $2,100MXN (Escolarizado) y $3,500.00 MXN (Escolarizado-Sabatino).
+                            <br>
+                            <button class="btn btn-warning" onclick="responderPago('Inscripción')">🎓 Pagar Inscripción</button>
+                        ` },
 
-            for (let item of respuestas) {
-                if (item.keywords.some(keyword => mensaje.includes(keyword))) {
-                    respuestaEncontrada = item.respuesta;
-                    break;
+                {keywords: ["Curso de Induccion"], respuesta: "El curso se llevara se llevará a cabo de manera PRESENCIALMENTE del 21 al 25 de Julio del 2025, te invitamos que estes al pendiente en nuestras redes sociales."
+                },
+
+                    ];
+
+                    for (let item of respuestas) {
+                        if (item.keywords.some(keyword => mensaje.includes(keyword))) {
+                            respuestaEncontrada = item.respuesta;
+                            break;
+                        }
+                    }
+
+                    setTimeout(() => {
+                        chatBody.innerHTML += `<div><b>IA:</b> ${respuestaEncontrada}</div>`;
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 500);
                 }
+                input.value = '';
+                input.focus();
             }
 
-            setTimeout(() => {
-                chatBody.innerHTML += `<div><b>IA:</b> ${respuestaEncontrada}</div>`;
-                scrollToBottom();
-            }, 500);
-        }
-        
-        input.value = ''; // Limpiar input después de enviar
-        input.focus();
-    }
-
-    // Evento para enviar mensaje con el botón
-    document.getElementById('send-btn').addEventListener('click', procesarMensaje);
-
-    // Evento para enviar mensaje al presionar Enter
-    document.getElementById('chat-input').addEventListener('keydown', function (event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            procesarMensaje();
-        }
-    });
-
-    // Función para hacer scroll automático en el chat
-    function scrollToBottom() {
-        let chatBody = document.getElementById('chat-body');
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
-});
-</script>
-
-    </body>
+            document.getElementById('send-btn').addEventListener('click', procesarMensaje);
+            document.getElementById('chat-input').addEventListener('keydown', function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    procesarMensaje();
+                }
+            });
+        });
+    </script>
+</body>
 </html>
