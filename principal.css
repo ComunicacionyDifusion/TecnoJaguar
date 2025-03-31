@@ -8,11 +8,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Ajustado para subir el texto */
     height: 500px;
     background: linear-gradient(to bottom, #09386b, white);
     color: black;
     text-align: center;
+    position: relative; /* Asegura que los elementos se posicionen correctamente */
+    padding-top: 100px; /* Espacio para subir el texto */
 }
 
 .hero h1 {
@@ -21,12 +23,14 @@
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 11; /* Asegura que el texto quede sobre la marca de agua */
 }
 
 /* Estilos para la marca de agua */
 .watermark {
     position: absolute;
-    top: 61%;
+    top: 60%; /* Bajamos la imagen */
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
@@ -75,14 +79,16 @@
 /* Estilos del Chatbot IA */
 .chat-container {
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 350px;
     height: 400px;
     background: white;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: none;
+    z-index: 1000; /* Asegura que esté en la parte superior */
 }
 
 .chat-header {
@@ -131,7 +137,6 @@
 #chat-container {
     display: none;
 }
-
 
 /* Media Queries para hacer el diseño responsivo */
 @media (max-width: 768px) {
