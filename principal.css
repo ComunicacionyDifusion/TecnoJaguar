@@ -171,27 +171,61 @@
     border-top-right-radius: 8px;
 }
 
-/* Ajuste del cuerpo del chatbot */
+/* Centrar el Chatbot en la pantalla */
+#chat-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.8); /* Agregar transparencia */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+/* Ajuste del encabezado del chatbot */
+.chat-header {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* Ajuste del cuerpo del chatbot con transparencia */
 .chat-body {
-    max-height: 300px;
+    max-height: 280px;
     overflow-y: auto;
     padding: 10px;
+    background: rgba(255, 255, 255, 0.5); /* Transparencia en el cuerpo */
+    border-bottom: 1px solid #ccc;
 }
 
-/* Ajuste del pie de página del chatbot */
+/* Ajuste del pie del chatbot */
 .chat-footer {
     display: flex;
+    align-items: center; /* Alinear verticalmente */
     padding: 10px;
-    border-top: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.8); /* Transparencia */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
+/* Ajuste del campo de entrada */
 .chat-footer input {
     flex: 1;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 14px;
 }
 
+/* Ajuste del botón de enviar */
 .chat-footer button {
     background: #09386b;
     color: white;
@@ -200,12 +234,12 @@
     margin-left: 10px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .chat-footer button:hover {
     background: #0056b3;
 }
-
 /* Media Queries para hacer el diseño responsivo */
 @media (max-width: 768px) {
     .navbar-brand img {
