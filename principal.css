@@ -153,32 +153,6 @@
     transform: translate(-50%, -50%);
     width: 350px;
     height: 400px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000;
-}
-
-/* Ajuste del encabezado del chatbot */
-.chat-header {
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-/* Centrar el Chatbot en la pantalla */
-#chat-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 400px;
     background: rgba(255, 255, 255, 0.8); /* Agregar transparencia */
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
