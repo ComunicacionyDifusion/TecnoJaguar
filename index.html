@@ -107,7 +107,9 @@
                                 <li><a href="#">Ingeniería en Desarrollo de Aplicaciones</a></li>
                                 <li><a href="#">Licenciatura en Contador Publico</a></li>
                                 <li><a href="#">Licenciatura en Administración</a></li>
-                            </ul>` },
+                            </ul>
+                            <p>También contamos con una extensión en Loma Bonita.</p> 
+                            `},
                         { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
                         { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" },
                         { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
@@ -125,34 +127,47 @@
                         </div>
                     </div>` 
                 },
-                { keywords: ["examen de admisión","examen de admision"], respuesta: "el simulacro se llevara acabo el 17 de julio del 2025 y posteriormente el dia 18 de julio del presente año se llevara el examen" }, 
-                { keywords: ["curso de homogeneizacion"], respuesta: `
-                            Nuestro curso se llevará en dos modalidades: Escolarizada y Sabatina. ¿Qué modalidad llevaras?
-                            <br>
-                            <button class="btn btn-primary" onclick="responderCurso('Escolarizada')">📚 Escolarizada</button>
-                            <button class="btn btn-success" onclick="responderCurso('Sabatina')">📆 Sabatina</button>
-                        ` },
-                        { keywords: ["pagos", "costos"], respuesta: `
-                            Los pagos disponibles son:
-                            <ul>
-                                <li><i class="fas fa-file-invoice-dollar"></i> Ficha de Admisión</li>
-                                <li><i class="fas fa-book"></i> Curso de Homogeneización</li>
-                                <li><i class="fas fa-university"></i> Inscripción</li>
-                            </ul>` },
-                        { keywords: ["ficha de admision","fichas"], respuesta: `
-                            La ficha de admisión puedes sacarla hasta el 11 de Julio del presente año tiene un costo de $900.00 MXN (Para ambas modalidades).
+                { keywords: ["examen de admisión","examen de admision"], respuesta: "el simulacro se llevara acabo el 17 de julio del 2025 y posteriormente el dia 18 de julio del presente año se llevara el examen" 
+                            }, 
+                { keywords: ["ficha de admision","fichas"], respuesta: `
+                            La ficha de admisión puedes sacarla hasta el 11 de Julio del presente año tiene un costo de $900.00 MXN (Para ambas modalidades y la extension en Loma Bonita).
                            ` },
-                        { keywords: ["curso de homogeneizacion"], respuesta: `
-                            El curso de homogeneización tiene un costo de $1,500.00 MXN(Escolarizado) y $1,000(Escolarizado-Sabatino).
+                { keywords: ["curso de homogeneizacion"], respuesta: `
+                            El curso de homogeneización tiene un costo de $1,500.00 MXN(Escolarizado) y $1,000(Escolarizado-Sabatino); en la extencion en Loma Bonita es de $1,000 (Escolarizado-Sabatino).
                             ` },
-                        { keywords: ["inscripcion"], respuesta: `
-                            La inscripción tiene un costo de $2,100MXN (Escolarizado) y $3,500.00 MXN (Escolarizado-Sabatino).
+                { keywords: ["inscripcion"], respuesta: `
+                            La inscripción tiene un costo de $2,100MXN (Escolarizado) y $3,500.00 MXN (Escolarizado-Sabatino y en la Extension de Loma Bonita).
                             ` },
+                { keywords: ["Extencion", "Loma Bonita"], respuesta:`
+
+
+                        `},
 
                 {keywords: ["Curso de Induccion"], respuesta: "El curso se llevara se llevará a cabo de manera PRESENCIALMENTE del 21 al 25 de Julio del 2025, te invitamos que estes al pendiente en nuestras redes sociales."
                 },
 
-                    ];
+                { keywords: ["horarios", "clases"], respuesta: `
+                            Las clases son de lunes a viernes de 7:00 am a 2:00 pm (Escolarizado) y de 7:00 am a 1:00 pm (Escolarizado-Sabatino).
+                            ` },
+                
+                {  keywords: ["costo", "cuota", "pago"], respuesta: `
+                La cuota semestral es de:  
+                📌 **$2,100.00 MXN** (Escolarizado)  
+                📌 **$3,500.00 MXN** (Escolarizado-Sabatino)  
+                📌 **$3,500.00 MXN** (Escolarizado-Sabatino) Extension Loma bonita.
+        
+        Puedes realizar el pago de las siguientes maneras:  
+        🔹 **Transferencia o Depósito Bancario**  
+        - **Banco:** Santander  
+        - **Número de cuenta:** 65-507172002  
+        - **CLABE interbancaria:** 014855655071720028
+        - **Beneficiario:** TNM/Instituto Tecnológico de Tuxtepec. 
+        
+        🔹 **Pago con tarjeta** TUXTEPEC: En las Instalaciones del TecNM Tuxtepec de Lunes a Viernes de 9:00 a 15:30 Hrs. (excepto el último día del mes). 
+                                LOMA BONITA: En las Instalaciones de módulo del H. Ayuntamiento de Loma Bonita, los días Lunes, Miércoles y Sábados de 9:00 a 15:30 Hrs. (excepto el último día del mes).
+    ` },
+
+    ];
 
                     for (let item of respuestas) {
                         if (item.keywords.some(keyword => mensaje.includes(keyword))) {
