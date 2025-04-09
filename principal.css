@@ -8,13 +8,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Ajustado para subir el texto */
+    justify-content: flex-start;
     height: 500px;
     background: linear-gradient(to bottom, #09386b, white);
     color: black;
     text-align: center;
-    position: relative; /* Asegura que los elementos se posicionen correctamente */
-    padding-top: 100px; /* Espacio para subir el texto */
+    position: relative;
+    padding-top: 100px;
 }
 
 .hero h1 {
@@ -24,13 +24,13 @@
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     position: relative;
-    z-index: 11; /* Asegura que el texto quede sobre la marca de agua */
+    z-index: 11;
 }
 
 /* Estilos para la marca de agua */
 .watermark {
     position: absolute;
-    top: 60%; /* Bajamos la imagen */
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.5;
@@ -61,17 +61,16 @@
     display: none;
     position: absolute;
     top: 0;
-    left: 110%; /* Mueve el contenedor a la derecha del botón */
-    background: rgba(255, 255, 255, 0.5); /* Color blanco con 50% de transparencia */
+    left: 110%;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     z-index: 1000;
     min-width: 180px;
-    backdrop-filter: blur(5px); /* Agrega un efecto de desenfoque para mejor visibilidad */
+    backdrop-filter: blur(5px);
 }
 
-/* Estilos de los enlaces dentro del contenedor */
 .social-container a {
     display: block;
     padding: 5px;
@@ -81,22 +80,23 @@
 }
 
 .social-container a:hover {
-    background-color: rgba(255, 255, 255, 0.7); /* Un poco más opaco al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Estilos del Chatbot IA */
-.chat-container {
+#chat-container {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
     height: 400px;
-    background: white;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 10px;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000; /* Asegura que esté en la parte superior */
+    display: none; /* Por defecto el chatbot está oculto */
+    z-index: 1000;
 }
 
 .chat-header {
@@ -113,84 +113,19 @@
     max-height: 300px;
     overflow-y: auto;
     padding: 10px;
+    background: rgba(255, 255, 255, 0.5); /* Transparencia en el cuerpo */
+    border-bottom: 1px solid #ccc;
 }
 
 .chat-footer {
     display: flex;
     padding: 10px;
     border-top: 1px solid #ccc;
-}
-
-.chat-footer input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.chat-footer button {
-    background: #09386b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.chat-footer button:hover {
-    background: #0056b3;
-}
-
-#chat-container {
-    display: none;
-}
-/* Centrar el Chatbot en la pantalla */
-#chat-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.8); /* Agregar transparencia */
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000;
-}
-
-/* Ajuste del encabezado del chatbot */
-.chat-header {
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-/* Ajuste del cuerpo del chatbot con transparencia */
-.chat-body {
-    max-height: 280px;
-    overflow-y: auto;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.5); /* Transparencia en el cuerpo */
-    border-bottom: 1px solid #ccc;
-}
-
-/* Ajuste del pie del chatbot */
-.chat-footer {
-    display: flex;
-    align-items: center; /* Alinear verticalmente */
-    padding: 10px;
     background: rgba(255, 255, 255, 0.8); /* Transparencia */
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
-/* Ajuste del campo de entrada */
 .chat-footer input {
     flex: 1;
     padding: 10px;
@@ -199,7 +134,6 @@
     font-size: 14px;
 }
 
-/* Ajuste del botón de enviar */
 .chat-footer button {
     background: #09386b;
     color: white;
@@ -215,48 +149,13 @@
     background: #0056b3;
 }
 
-#chat-container {
-      display: none; /* Por defecto el chatbot está oculto */
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 300px;
-      height: 400px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      padding: 10px;
-      border-radius: 8px;
-    }
-    #chat-body {
-      height: 85%;
-      overflow-y: auto;
-      margin-bottom: 10px;
-    }
-    #chat-input {
-      width: calc(100% - 40px);
-      margin-right: 10px;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    #send-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    #send-btn:hover {
-      background-color: #0056b3;
-    }
 /* Media Queries para hacer el diseño responsivo */
 @media (max-width: 768px) {
     .navbar-brand img {
         width: 200px;
     }
 
-    .chat-container {
+    #chat-container {
         width: 90%;
         right: 5%;
     }
@@ -267,7 +166,7 @@
         font-size: 2rem;
     }
 
-    .chat-container {
+    #chat-container {
         height: 350px;
     }
 }
