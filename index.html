@@ -94,26 +94,51 @@
 
                     let respuestaEncontrada = "Lo siento, no entiendo la pregunta.";
                     const respuestas = [
-                        { keywords: ["carreras", "licenciatura", "ingeniería"], respuesta: `
-                            Ofrecemos las siguientes carreras:
-                            <ul>
-                                <li><a href="#">Ingeniería en Sistemas Computacionales</a></li>
-                                <li><a href="#">Ingeniería en Informática </a></li>
-                                <li><a href="#">Ingeniería en Electrónica</a></li>
-                                <li><a href="#">Ingeniería en Electromecánica</a></li>
-                                <li><a href="#">Ingeniería en Gestión Empresarial</a></li>
-                                <li><a href="#">Ingeniería Civil</a></li>
-                                <li><a href="#">Ingeniería en Bioquimica</a></li>
-                                <li><a href="#">Ingeniería en Desarrollo de Aplicaciones</a></li>
-                                <li><a href="#">Licenciatura en Contador Publico</a></li>
-                                <li><a href="#">Licenciatura en Administración</a></li>
-                            </ul>
-                            <p>También contamos con una extensión en Loma Bonita.</p> 
+                        {
+    keywords: ["carreras", "licenciatura", "ingeniería"], 
+    respuesta: `
+        Ofrecemos las siguientes carreras:
+        <ul>
+            <li><a href="https://www.tuxtepec.tecnm.mx/sistemas.html" target="_blank"><i class="fas fa-laptop-code"></i> Ingeniería en Sistemas Computacionales</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/informatica.html" target="_blank"><i class="fas fa-desktop"></i> Ingeniería en Informática</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/electronica.html" target="_blank"><i class="fas fa-microchip"></i> Ingeniería en Electrónica</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/gestion.html" target="_blank"><i class="fas fa-chart-line"></i> Ingeniería en Gestión Empresarial</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/electromecanica.html" target="_blank"><i class="fas fa-cogs"></i> Ingeniería Electromecánica</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/civil.html" target="_blank"><i class="fas fa-hard-hat"></i> Ingeniería Civil</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/bioquimica.html" target="_blank"><i class="fas fa-flask"></i> Ingeniería en Bioquímica</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/desarrollo.html" target="_blank"><i class="fas fa-mobile-alt"></i> Ingeniería en Desarrollo de Aplicaciones</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/contador.html" target="_blank"><i class="fas fa-calculator"></i> Licenciatura en Contador Público</a></li>
+            <li><a href="https://www.tuxtepec.tecnm.mx/administracion.html" target="_blank"><i class="fas fa-briefcase"></i> Licenciatura en Administración</a></li>
+        </ul>
+        📚 ¡Da clic en cada carrera para más información    
+       <p>También contamos con una extensión en Loma Bonita.</p> 
                             `},
                         { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
                         { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" },
                         { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
-                        { keywords: ["especialidad"], respuesta: "Si contamos con una especialidad de Semiconductores" },   
+                        { keywords: ["especialidad"], respuesta: "Si contamos con una especialidad de Semiconductores" },
+                        { keywords: ["maestría", "maestria", "maestrias", "maestrías"],
+                                    respuesta: `
+                                    🎓 Contamos con los siguientes programas de posgrado:
+                                        <ul>
+                                            <li>
+                                                <a href="https://maestrias.tuxtepec.tecnm.mx/alimentos/" target="_blank">
+                                                    <i class="fas fa-apple-alt"></i> Maestría en Ciencias en Alimentos</a></li>
+                                            <li>
+                                                <a href="https://maestrias.tuxtepec.tecnm.mx/administracion/" target="_blank">
+                                                    <i class="fas fa-briefcase"></i> Maestría en Administración</a></li>
+                                            <li>
+                                                <a href="https://maestrias.tuxtepec.tecnm.mx/economia/" target="_blank">
+                                                    <i class="fas fa-hand-holding-usd"></i> Maestría en Economía Social y Solidaria</a></li>
+                                        </ul>
+                                                `}
+    {keywords: ["especialidad"],
+    respuesta: `
+        📘 Contamos con la siguiente especialidad profesional:<br>
+        <a href="https://maestrias.tuxtepec.tecnm.mx/especialidad/" target="_blank">
+            <i class="fas fa-microchip"></i> Especialidad en Semiconductores
+        </a>
+    `}
                         { keywords: ["contacto", "redes sociales", "contactar"], respuesta: `
                     <div class="dropdown">
                         <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
@@ -138,27 +163,34 @@
                 { keywords: ["inscripcion"], respuesta: `
                             La inscripción tiene un costo de $2,100MXN (Escolarizado) y $3,500.00 MXN (Escolarizado-Sabatino y en la Extension de Loma Bonita).
                             ` },
-                { keywords: ["Carreras sabatinos","sabatico", "sabatinas","Sabaticas"], respuesta:`
-                nuestras carreras sabatinas son:
+                {keywords: ["Carreras sabatinos", "sabatico", "sabatinas", "Sabaticas"],
+    respuesta: `
+        Nuestras carreras sabatinas son:
+        <ul>
+            <li><strong>Tuxtepec:</strong>
                 <ul>
-                    Tuxtepec:
-                    <li><a href="#">Licenciatura en Contador Publico</a></li>
-                    <li><a href="#">Licenciatura en Administración</a></li>
-                    <li><a href="#">Ingeniería en Gestión Empresarial</a></li>
-                    <li><a href="#">Ingeniería en Sistemas Computacionales</a></li>
-
-                    Loma Bonita:
-                    <li><a href="#">Ingeniería en Gestión Empresarial</a></li>
-                    <li><a href="#">Ingeniería en Sistemas Computacionales</a></li>
-                    <li><a href="#">Licenciatura en Contador Publico</a></li>
-                    <li><a href="#">Licenciatura en Administración</a></li>
-                    <li><a href="#">Ingeniería en Electrónica</a></li>
-                        `},
-
-                {keywords: ["Curso de Induccion"], respuesta: "El curso se llevara se llevará a cabo de manera PRESENCIALMENTE del 21 al 25 de Julio del 2025, te invitamos que estes al pendiente en nuestras redes sociales."
+                    <li><a href="https://www.tuxtepec.tecnm.mx/contaduria.html" target="_blank"><i class="fas fa-calculator"></i> Licenciatura en Contador Público</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/administracion.html" target="_blank"><i class="fas fa-briefcase"></i> Licenciatura en Administración</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/gestion.html" target="_blank"><i class="fas fa-chart-line"></i> Ingeniería en Gestión Empresarial</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/sistemas.html" target="_blank"><i class="fas fa-laptop-code"></i> Ingeniería en Sistemas Computacionales</a></li>
+                </ul>
+            </li>
+            <li><strong>Loma Bonita:</strong>
+                <ul>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/gestion.html" target="_blank"><i class="fas fa-chart-line"></i> Ingeniería en Gestión Empresarial</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/sistemas.html" target="_blank"><i class="fas fa-laptop-code"></i> Ingeniería en Sistemas Computacionales</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/contaduria.html" target="_blank"><i class="fas fa-calculator"></i> Licenciatura en Contador Público</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/administracion.html" target="_blank"><i class="fas fa-briefcase"></i> Licenciatura en Administración</a></li>
+                    <li><a href="https://www.tuxtepec.tecnm.mx/electronica.html" target="_blank"><i class="fas fa-microchip"></i> Ingeniería en Electrónica</a></li>
+                </ul>
+            </li>
+        </ul>
+    `
+}
+            {keywords: ["Curso de Induccion"], respuesta: "El curso se llevara se llevará a cabo de manera PRESENCIALMENTE del 21 al 25 de Julio del 2025, te invitamos que estes al pendiente en nuestras redes sociales."
                 },
                 
-                {keywords: ["costo", "cuota", "pago"], respuesta: `
+                {keywords: ["costo", "cuota", "pago","pagar"], respuesta: `
                 Puedes realizar el pago de las siguientes maneras:  
             🔹 **Transferencia o Depósito Bancario**  
                 - **Banco:** Santander  
@@ -185,9 +217,9 @@
             - Efectuado el pago/deposito/transferencia electrónica no habrá reembolso, es responsabilidad del interesado realizar correctamente su trámite.
 
     ` },
+                { keywords: ["horario", "horarios", "horario", "atención", "atenciones"], respuesta: "Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 16:00 hrs" },
 
     ];
-
                     for (let item of respuestas) {
                         if (item.keywords.some(keyword => mensaje.includes(keyword))) {
                             respuestaEncontrada = item.respuesta;
