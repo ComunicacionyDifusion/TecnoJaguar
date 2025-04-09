@@ -60,40 +60,43 @@
     <!-- Imagen de marca de agua centrada -->
     <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
-    <!-- Contenedor del chatbot -->
-    <div id="chat-container" style="display: none;">
-        <div id="chat-body" style="height: 300px; overflow-y: auto;"></div>
-        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
-        <button id="send-btn">Enviar</button>
-    </div>
-
+   <!-- Contenedor del chatbot -->
+<div id="chat-container" style="display: none;">
+    <div id="chat-body"></div>
+    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
+    <button id="send-btn">Enviar</button>
+  </div>
     <!-- JavaScript -->
     <script>
+        //Reedireccion inicio
         document.getElementById('inicio').addEventListener('click', function () { 
             window.location.href = "index.html"; 
         }); 
-
+        //mostrar/ocultar redes sociales
         document.getElementById('contacto').addEventListener('click', function () {
             let socialBox = document.getElementById("socials");
             socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
         });
 
-        document.getElementById('chatbot-btn').addEventListener('click', function () {
-            let chatBox = document.getElementById("chat-container");
-            chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "block" : "none";
-        });
+        // Mostrar/ocultar chatbot
+    document.getElementById('chatbot-btn').addEventListener('click', () => {
+        const chat = document.getElementById('chat-container');
+        chat.style.display = chat.style.display === 'none' ? 'block' : 'none';
+    });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            function procesarMensaje() {
-                let input = document.getElementById('chat-input');
-                let mensaje = input.value.toLowerCase().trim();
-                let chatBody = document.getElementById('chat-body');
+    // Procesar mensaje
+    function procesarMensaje() {
+        const input = document.getElementById('chat-input');
+        const chatBody = document.getElementById('chat-body');
+        const mensaje = input.value.trim().toLowerCase();
 
-                if (mensaje) {
-                    chatBody.innerHTML += `<div><b>Tú:</b> ${mensaje}</div>`;
+        if (mensaje) {
+            chatBody.innerHTML += `<div><strong>Tú:</strong> ${mensaje}</div>`;
 
-                    let respuestaEncontrada = "Lo siento, no entiendo la pregunta.";
-                    const respuestas = [
+            let respuesta = "Lo siento, no entiendo la pregunta.";
+
+            // Respuestas rápidas
+            const respuestas = [
                         { keywords: ["carreras", "licenciatura", "ingeniería"], 
     respuesta: `
         Ofrecemos las siguientes carreras:
