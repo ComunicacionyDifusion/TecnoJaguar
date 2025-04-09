@@ -130,8 +130,8 @@
                                                 <a href="https://maestrias.tuxtepec.tecnm.mx/economia/" target="_blank">
                                                     <i class="fas fa-hand-holding-usd"></i> Maestría en Economía Social y Solidaria</a></li>
                                         </ul>
-                                                `}
-   { keywords: ["especialidad"], 
+                                                `},
+   { keywords: ["especialidad", "especialidades"], 
   respuesta: `
     📘 Contamos con la siguiente especialidad profesional:<br>
     <a href="https://maestrias.tuxtepec.tecnm.mx/especialidad/" target="_blank">
@@ -185,10 +185,9 @@
                 </ul>
             </li>
         </ul>
-    `}
+    `},
 { keywords: ["Curso de Induccion"], respuesta: "El curso se llevará a cabo de manera PRESENCIAL del 21 al 25 de Julio del 2025, te invitamos a estar al pendiente en nuestras redes sociales."
 },
-
                 { keywords: ["costo", "cuota", "pago","pagar"], respuesta: `
                 Puedes realizar el pago de las siguientes maneras:  
             🔹 **Transferencia o Depósito Bancario**        
@@ -216,7 +215,7 @@
             - Efectuado el pago/deposito/transferencia electrónica no habrá reembolso, es responsabilidad del interesado realizar correctamente su trámite.
 
     ` },
-                { keywords: ["horario", "horarios", "horario", "atención", "atenciones"], respuesta: "Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 16:00 hrs"
+                { keywords: ["horario", "horarios", "atención", "atenciones"], respuesta: "Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 16:00 hrs"
                 },
 
     ];
@@ -242,6 +241,8 @@
                     event.preventDefault();
                     procesarMensaje();
                 }
+                <button id="send-btn" class="btn btn-primary mt-2">Enviar</button>
+
             });
         });
     </script>
