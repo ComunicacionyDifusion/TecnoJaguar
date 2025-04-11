@@ -184,33 +184,6 @@
     background: #0056b3; /* Cambio de color al pasar el mouse */
 }
 
-/* ===========================================
-        BOTÓN FLOTANTE DEL CHATBOT
-=========================================== */
-#chatbot-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #09386b;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    cursor: pointer;
-    animation: fadeInUp 0.4s ease;
-}
-
-#chatbot-btn i {
-    font-size: 20px;
-}
-
-/* Efecto visual al activarse el botón */
-#chatbot-btn.active {
-    background-color: #0056b3;
-}
 
 /* Animación de entrada del botón */
 @keyframes fadeInUp {
@@ -223,7 +196,6 @@
         transform: translateY(0);
     }
 }
-
 /* ===========================================
     MEDIA QUERIES PARA DISEÑO RESPONSIVO
 =========================================== */
