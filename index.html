@@ -11,114 +11,115 @@
 </head>
 <body>
 
- <!-- Barra de navegación -->
- <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="cintillo final 50 aniversario mejorado.png" alt="TecnoJaguar Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <button id="inicio" class="btn btn-outline-light">
-                            <i class="fas fa-home"></i> Inicio
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="cintillo final 50 aniversario mejorado.png" alt="TecnoJaguar Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <button id="inicio" class="btn btn-outline-light">
+                        <i class="fas fa-home"></i> Inicio
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <div class="contact-container">
+                        <button id="contacto" class="btn btn-outline-light">
+                            <i class="fas fa-share-alt"></i> Contacto
                         </button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="chatbot-btn" class="btn btn-outline-light">
-                            <i class="fas fa-robot"></i> IA Chatbot
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <div class="contact-container">
-                            <button id="contacto" class="btn btn-outline-light">
-                                <i class="fas fa-share-alt"></i> Contacto
-                            </button>
-                            <div id="socials" class="social-container" style="display: none;">
-                                <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                                <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                                <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                                <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-                                <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                            </div>
-                                <li class="nav-item">
+                        <div id="socials" class="social-container" style="display: none;">
+                            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+                            <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                        </div>
+                        <li class="nav-item">
                             <button id="chatbot-btn" class="btn btn-outline-light">
                                 <i class="fas fa-robot"></i> IA Chatbot
                             </button>
-                            </li>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                        </li>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </nav>
- <!-- Sección de TecnoJaguar -->
-    <section class="hero">
-        <h1>TecnoJaguar</h1>
-    </section>
-    
-    <!-- Imagen de marca de agua centrada -->
-    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
-<!-- Chatbot -->
-<!-- Contenedor del Chatbot -->
-<div id="chat-container">
-  <div class="chat-header">
-    <i class="fas fa-robot"></i> Jaguar Asistente</div>
-  <div class="chat-body">
-    <!-- Mensajes aquí -->
-  </div>
-  <div class="chat-footer">
-    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
-    <button id="send-btn">Enviar</button>
-  </div>
-</div>
-        
-    <!-- JavaScript -->
-    <script>
-        //Reedireccion inicio
-        document.getElementById('inicio').addEventListener('click', function () { 
-            window.location.href = "index.html"; 
-        }); 
-        //mostrar/ocultar redes sociales
-        document.getElementById('contacto').addEventListener('click', function () {
-            let socialBox = document.getElementById("socials");
-            socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
-        });
+    </div>
+</nav>
 
-        document.getElementById('chatbot-btn').addEventListener('click', function() {
-    let chatContainer = document.getElementById('chat-container');
-    let chatButton = document.getElementById('chatbot-btn');
+<!-- Sección de TecnoJaguar -->
+<section class="hero">
+    <h1>TecnoJaguar</h1>
+</section>
 
-    // Mostrar u ocultar el contenedor del chat
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-        chatContainer.style.display = 'flex';
-        chatButton.classList.add('active');  // Cambiar el color del botón
-    } else {
-        chatContainer.style.display = 'none';
-        chatButton.classList.remove('active');  // Revertir el color del botón
+<!-- Imagen de marca de agua centrada -->
+<img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+
+<!-- JavaScript básico -->
+<script>
+    // Redirección al inicio
+    document.getElementById('inicio').addEventListener('click', function () { 
+        window.location.href = "index.html"; 
+    });
+
+    // Mostrar/ocultar redes sociales
+    document.getElementById('contacto').addEventListener('click', function () {
+        let socialBox = document.getElementById("socials");
+        socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
+    });
+// ==========================================
+//        LÓGICA DEL BOTÓN Y EL CHATBOT
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Referencia al botón que muestra/oculta el chatbot
+    const chatbotBtn = document.getElementById('chatbot-btn');
+    const chatContainer = document.getElementById('chat-container');
+    // Mostrar u ocultar el chatbot al hacer clic en el botón
+    chatbotBtn.addEventListener('click', function () {
+        chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'flex' : 'none';
+        chatbotBtn.classList.toggle('active');
+    });
+    // Referencias a los elementos del input y botón de envío
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const chatBody = document.getElementById('chat-body');
+    // Enviar mensaje al hacer clic en el botón "Enviar"
+    sendBtn.addEventListener('click', function () {
+        const message = userInput.value.trim();
+        if (message !== '') {
+            appendMessage('Tú', message, 'user'); // Muestra el mensaje del usuario
+            respondToMessage(message);            // Responde automáticamente
+            userInput.value = '';                 // Limpia el input
+        }
+    });
+    // Permite enviar mensaje presionando "Enter"
+    userInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendBtn.click();
+        }
+    });
+    // Función para agregar mensajes al chat
+    function appendMessage(sender, text, type) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', type);
+        messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        chatBody.appendChild(messageElement);
+        chatBody.scrollTop = chatBody.scrollHeight; // Hace scroll al final
     }
-});
-  // Enviar mensaje
-  document.getElementById("send-btn").addEventListener("click", function () {
-    let input = document.getElementById("chat-input");
-    let message = input.value.trim();
-    if (message !== "") {
-      let chatBody = document.getElementById("chat-body");
-      let userMessage = document.createElement("div");
-      let respuesta = "Lo siento, no entiendo la pregunta.";
-      userMessage.textContent = "Tú: " + message;
-      chatBody.appendChild(userMessage);
-      input.value = "";
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-  });
-            // Respuestas rápidas
-            const respuestas = [
-                        { keywords: ["carreras", "licenciatura", "ingeniería"], 
+    // Función principal que responde a los mensajes del usuario
+    function respondToMessage(message) {
+        const msg = message.toLowerCase(); // Convierte todo a minúsculas para facilitar la comparación
+        let respuestaEncontrada = "Lo siento, no entendí tu mensaje. ¿Podrías intentar de nuevo?";
+
+        // Arreglo de posibles respuestas automáticas con palabras clave
+        const respuestas = [
+    { keywords: ["carreras", "licenciatura", "ingeniería"], 
     respuesta: `
         Ofrecemos las siguientes carreras:
         <ul>
