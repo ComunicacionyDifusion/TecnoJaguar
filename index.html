@@ -67,11 +67,37 @@
         window.location.href = "index.html"; 
     });
 
-    // Mostrar/ocultar redes sociales
-    document.getElementById('contacto').addEventListener('click', function () {
-        let socialBox = document.getElementById("socials");
-        socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
-    });
+    const contactoNav = document.getElementById('contacto-nav'); // Botón de la navbar
+const chatContainer = document.getElementById('chat-container'); // Contenedor del chatbot
+
+// Contenido de redes sociales
+const redesSocialesHTML = `
+    <div class="dropdown">
+        <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
+        <div class="dropdown-content">
+            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+            <a href="https://instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://tiktok.com/@tecnmcampustuxtepec" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+    </div>
+`;
+
+// Mostrar chatbot y enviar mensaje de redes
+contactoNav.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Mostrar chatbot si está oculto
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'flex';
+    }
+
+    // Mostrar el mensaje de redes como si fuera del bot
+    appendMessage('Jaguar Asistente', redesSocialesHTML, 'bot');
+});
+
 // ==========================================
 //        LÓGICA DEL BOTÓN Y EL CHATBOT
 // ==========================================
@@ -137,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         📚 ¡Da clic en cada carrera para más información    
        <p>También contamos con una extensión en Loma Bonita.</p> 
                             `},
-                        { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy TecnoJaguar, ¿en qué puedo ayudarte? 😊" },
+                        { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy tu Jaguar Asistenre, ¿En qué puedo ayudarte?😊" },
                         { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" },
                         { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
                         { keywords: ["especialidad"], respuesta: "Si contamos con una especialidad de Semiconductores" },
@@ -156,6 +182,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     <i class="fas fa-hand-holding-usd"></i> Maestría en Economía Social y Solidaria</a></li>
                                         </ul>
                                                 `},
+            { keywords: ["contacto", "redes sociales", "contactar"],
+  respuesta: `
+    Puedes contactarnos a través de nuestras redes sociales:
+        <br><a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></br>
+        <br><a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></br>
+        <br><a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></br>
+        <br><a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></br>
+        <br><a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a></br>
+        <br><a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></br>
+  `}
+
    { keywords: ["especialidad", "especialidades"], 
   respuesta: `
     📘 Contamos con la siguiente especialidad profesional:<br>
