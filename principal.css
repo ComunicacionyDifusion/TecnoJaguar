@@ -75,27 +75,28 @@
 /* ===========================================
         CONTENEDOR DE REDES SOCIALES
 =========================================== */
+/* Contenedor del botón contacto + menú */
 .contact-container {
     position: relative;
     display: inline-block;
 }
 
-/* Menú desplegable de redes sociales */
+/* Menú flotante de redes sociales */
 .social-container {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: absolute;
-    top: 0;
-    left: 110%;
+    top: 100%;  /* Aparece debajo del botón */
+    left: 0;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
     z-index: 1000;
     min-width: 180px;
-    backdrop-filter: blur(5px); /* Difuminado */
+    backdrop-filter: blur(5px);
 }
 
-/* Estilo de los enlaces de redes */
+/* Estilo de los enlaces dentro del menú */
 .social-container a {
     display: block;
     padding: 5px;
@@ -104,8 +105,10 @@
     font-weight: bold;
 }
 
+/* Hover visual suave */
 .social-container a:hover {
-    background-color: rgba(255, 255, 255, 0.7); /* Hover suave */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
 }
 
 /* ===========================================
