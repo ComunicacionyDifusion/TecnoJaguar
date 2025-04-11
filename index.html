@@ -27,19 +27,32 @@
                         <i class="fas fa-home"></i> Inicio
                     </button>
                 </li>
-                <li class="nav-item">
-                    <div class="contact-container">
-                        <button id="contacto" class="btn btn-outline-light">
-                            <i class="fas fa-share-alt"></i> Contacto
-                        </button>
-                        <div id="socials" class="social-container" style="display: none;">
-                            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                            <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-                            <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                        </div>
+                <!-- Botón de contacto con menú desplegable -->
+<li class="nav-item contact-container">
+  <a id="contacto-nav" class="nav-link" href="#">Contacto</a>
+
+  <!-- Menú desplegable de redes sociales -->
+  <div class="social-container">
+    <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://wa.me/+522871104437" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://x.com/ittuxtepec" target="_blank">
+      <i class="fab fa-twitter"></i> X (Twitter)
+    </a>
+    <a href="https://instagram.com/tecnm_tuxtepec" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://tiktok.com/@tecnmcampustuxtepec" target="_blank">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+  </div>
+</li>
                         <li class="nav-item">
                             <button id="chatbot-btn" class="btn btn-outline-light">
                                 <i class="fas fa-robot"></i> IA Chatbot
@@ -67,41 +80,26 @@
         window.location.href = "index.html"; 
     });
 
-  document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
     const contactoBtn = document.getElementById('contacto-nav'); // Botón "Contacto"
-    const socialMenu = document.querySelector('.social-container'); // Menú oculto
-// Contenido de redes sociales
-const redesSocialesHTML = `
-    <div class="dropdown">
-        <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
-        <div class="dropdown-content">
-            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-            <a href="https://instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://tiktok.com/@tecnmcampustuxtepec" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
-    </div>
-`;
-    contactoBtn.addEventListener('click', function (e) {
-        e.preventDefault(); // Evita el salto por href="#"
+    const socialMenu = document.querySelector('.social-container'); // Menú desplegable
 
-        // Alternar la visibilidad
-        if (socialMenu.style.display === 'block') {
-            socialMenu.style.display = 'none';
-        } else {
-            socialMenu.style.display = 'block';
-        }
+    // Al dar clic en "Contacto", alterna la visibilidad del menú
+    contactoBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // Evita que la página recargue o se desplace
+        const visible = socialMenu.style.display === 'flex';
+        socialMenu.style.display = visible ? 'none' : 'flex';
     });
-    // Cierra el menú si haces clic fuera
-    document.addEventListener('click', function (event) {
-        if (!event.target.closest('.contact-container')) {
+
+    // Si haces clic fuera del menú, se cierra automáticamente
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.contact-container')) {
             socialMenu.style.display = 'none';
         }
     });
 });
 
+});
 
 // Mostrar chatbot y enviar mensaje de redes
 contactoNav.addEventListener('click', function (e) {
