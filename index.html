@@ -11,67 +11,47 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="cintillo final 50 aniversario mejorado.png" alt="TecnoJaguar Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <button id="inicio" class="btn btn-outline-light">
-                            <i class="fas fa-home"></i> Inicio
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="chatbot-btn" class="btn btn-outline-light">
-                            <i class="fas fa-robot"></i> IA Chatbot
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <!-- Botón de contacto -->
-                          <button id="contacto" class="btn btn-primary">
-                            <i class="fas fa-share-alt"></i> Contacto
-                              </button>
-                          <!-- Caja de redes sociales -->
-                          <div id="socials" class="social-container" style="display: none;">
-                                <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                                <a href="https://www.instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                                <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                                <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                                <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-                                <a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+ <!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="TecnoJaguar">
+    </a>
 
-    <!-- Sección de TecnoJaguar -->
-    <section class="hero">
-        <h1>TecnoJaguar</h1>
-    </section>
-    
-    <!-- Imagen de marca de agua centrada -->
-    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-   <!-- Botón del Chatbot -->
-  <button id="chatbot-btn" class="btn btn-primary">
-    <i class="fas fa-robot"></i> Chatbot
-  </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto" id="contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <!-- Botón del Chatbot integrado al navbar -->
+          <button id="chatbot-btn" class="btn btn-outline-primary ms-2">
+            <i class="fas fa-robot"></i> Chatbot
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- Contenedor del Chatbot -->
-  <div id="chat-container">
-    <div id="chat-body"></div>
+<!-- Contenedor del Chatbot -->
+<div id="chat-container">
+  <div class="chat-header">Jaguar Asistente</div>
+  <div class="chat-body" id="chat-body"></div>
+  <div class="chat-footer">
     <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
     <button id="send-btn">Enviar</button>
   </div>
+</div>
+
+        
     <!-- JavaScript -->
     <script>
         //Reedireccion inicio
@@ -86,33 +66,24 @@
 
         // Mostrar/ocultar chatbot
   document.getElementById("chatbot-btn").addEventListener("click", function () {
-    let container = document.getElementById("chat-container");
-    container.style.display = (container.style.display === "none" || container.style.display === "") ? "flex" : "none";
+    let chat = document.getElementById("chat-container");
+    chat.style.display = (chat.style.display === "none" || chat.style.display === "") ? "flex" : "none";
   });
 
+  // Enviar mensaje
   document.getElementById("send-btn").addEventListener("click", function () {
     let input = document.getElementById("chat-input");
     let message = input.value.trim();
     if (message !== "") {
       let chatBody = document.getElementById("chat-body");
       let userMessage = document.createElement("div");
+      let respuesta = "Lo siento, no entiendo la pregunta.";
       userMessage.textContent = "Tú: " + message;
       chatBody.appendChild(userMessage);
       input.value = "";
       chatBody.scrollTop = chatBody.scrollHeight;
     }
   });
-    // Procesar mensaje
-    function procesarMensaje() {
-        const input = document.getElementById('chat-input');
-        const chatBody = document.getElementById('chat-body');
-        const mensaje = input.value.trim().toLowerCase();
-
-        if (mensaje) {
-            chatBody.innerHTML += `<div><strong>Tú:</strong> ${mensaje}</div>`;
-
-            let respuesta = "Lo siento, no entiendo la pregunta.";
-
             // Respuestas rápidas
             const respuestas = [
                         { keywords: ["carreras", "licenciatura", "ingeniería"], 
