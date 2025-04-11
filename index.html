@@ -42,10 +42,19 @@
 </nav>
 
 <!-- Chatbot -->
+<!-- Botón flotante para abrir/cerrar el Chatbot -->
+<button id="chatbot-btn" class="btn btn-primary">
+  <i class="fas fa-robot"></i>
+</button>
+
+<!-- Contenedor del Chatbot -->
 <div id="chat-container">
-  <div class="chat-header">Jaguar Asitente</div>
-    <div><i class="fas fa-robot"></i></div>
-  <div class="chat-body" id="chat-body"></div>
+  <div class="chat-header">
+    <i class="fas fa-robot"></i> Jaguar Asistente
+  </div>
+  <div class="chat-body">
+    <!-- Mensajes aquí -->
+  </div>
   <div class="chat-footer">
     <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
     <button id="send-btn">Enviar</button>
@@ -64,12 +73,19 @@
             socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
         });
 
-        // Mostrar/ocultar chatbot
-  document.getElementById("chatbot-btn").addEventListener("click", function () {
-    let chat = document.getElementById("chat-container");
-    chat.style.display = (chat.style.display === "none" || chat.style.display === "") ? "flex" : "none";
-  });
+        document.getElementById('chatbot-btn').addEventListener('click', function() {
+    let chatContainer = document.getElementById('chat-container');
+    let chatButton = document.getElementById('chatbot-btn');
 
+    // Mostrar u ocultar el contenedor del chat
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'flex';
+        chatButton.classList.add('active');  // Cambiar el color del botón
+    } else {
+        chatContainer.style.display = 'none';
+        chatButton.classList.remove('active');  // Revertir el color del botón
+    }
+});
   // Enviar mensaje
   document.getElementById("send-btn").addEventListener("click", function () {
     let input = document.getElementById("chat-input");
