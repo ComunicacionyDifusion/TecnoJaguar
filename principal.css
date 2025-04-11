@@ -75,41 +75,51 @@
 /* ===========================================
         CONTENEDOR DE REDES SOCIALES
 =========================================== */
-/* Contenedor del botón contacto + menú */
+/* Contenedor del botón de contacto */
 .contact-container {
     position: relative;
-    display: inline-block;
 }
 
-/* Menú flotante de redes sociales */
+/* Menú oculto por defecto */
 .social-container {
-    display: none; /* Oculto por defecto */
+    display: none; /* Oculto inicialmente */
+    flex-direction: column; /* Apila los enlaces verticalmente */
     position: absolute;
-    top: 100%;  /* Aparece debajo del botón */
+    top: 100%; /* Aparece debajo del botón */
     left: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     padding: 10px;
     z-index: 1000;
-    min-width: 180px;
-    backdrop-filter: blur(5px);
+    min-width: 200px;
+    backdrop-filter: blur(6px); /* Difuminado elegante */
+    transition: all 0.3s ease; /* Animación suave */
 }
 
-/* Estilo de los enlaces dentro del menú */
+/* Estilos para los enlaces dentro del menú */
 .social-container a {
-    display: block;
-    padding: 5px;
-    color: #333;
+    padding: 8px 12px;
     text-decoration: none;
+    color: #333;
     font-weight: bold;
+    display: block;
+    border-radius: 4px;
 }
 
-/* Hover visual suave */
 .social-container a:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.05); /* Hover suave */
 }
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .social-container {
+        position: static;
+        margin-top: 10px;
+        box-shadow: none;
+    }
+}
+
 
 /* ===========================================
         CHATBOT INTELIGENCIA ARTIFICIAL
