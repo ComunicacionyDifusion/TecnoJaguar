@@ -101,15 +101,18 @@
 
 });
 
-// Mostrar chatbot y enviar mensaje de redes
-contactoNav.addEventListener('click', function (e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    // Referencias a los elementos
+    const chatbotBtn = document.getElementById('chatbot-btn'); // Botón de abrir/cerrar
+    const chatContainer = document.getElementById('chat-container'); // Contenedor del chatbot
 
-    // Mostrar chatbot si está oculto
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-        chatContainer.style.display = 'flex';
-    }
-
+    // Al hacer clic en el botón, alterna entre mostrar u ocultar el chatbot
+    chatbotBtn.addEventListener('click', function () {
+        const isHidden = chatContainer.style.display === 'none' || chatContainer.style.display === '';
+        chatContainer.style.display = isHidden ? 'flex' : 'none'; // Muestra si estaba oculto y viceversa
+        chatbotBtn.classList.toggle('active'); // Cambia clase si quieres aplicar estilos cuando está activo
+    });
+});
     // Mostrar el mensaje de redes como si fuera del bot
     appendMessage('Jaguar Asistente', redesSocialesHTML, 'bot');
 });
