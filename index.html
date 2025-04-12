@@ -65,14 +65,15 @@
     </div>
 </nav>
 
-<!-- Sección de TecnoJaguar -->
-<section class="hero">
-    <h1>TecnoJaguar</h1>
-</section>
+    <!-- Sección de TecnoJaguar -->
+        <section class="hero">
+            <h1>TecnoJaguar</h1>
+        </section>
 
-<!-- Imagen de marca de agua centrada -->
-<img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+    <!-- Imagen de marca de agua centrada -->
+    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
 
+    
 <!-- JavaScript básico -->
 <script>
     // Redirección al inicio
@@ -80,39 +81,93 @@
         window.location.href = "index.html"; 
     });
 
- document.addEventListener('DOMContentLoaded', function () {
-    const contactoBtn = document.getElementById('contacto-nav'); // Botón "Contacto"
-    const socialMenu = document.querySelector('.social-container'); // Menú desplegable
+ // Mostrar/ocultar redes sociales al hacer clic en el botón "Contacto"
+document.getElementById('contacto').addEventListener('click', function () {
+    // Obtiene el contenedor que muestra las redes sociales
+    let socialBox = document.getElementById("socials");
 
-    // Al dar clic en "Contacto", alterna la visibilidad del menú
-    contactoBtn.addEventListener('click', function (e) {
-        e.preventDefault(); // Evita que la página recargue o se desplace
-        const visible = socialMenu.style.display === 'flex';
-        socialMenu.style.display = visible ? 'none' : 'flex';
-    });
-
-    // Si haces clic fuera del menú, se cierra automáticamente
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.contact-container')) {
-            socialMenu.style.display = 'none';
-        }
-    });
+    // Alterna el valor de 'display': si está oculto, lo muestra; si está visible, lo oculta
+    socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatContainer = document.getElementById('chat-container');
-    const sendBtn = document.getElementById('send-btn');
-    const userInput = document.getElementById('user-input');
-    const chatBody = document.getElementById('chat-body');
+// Agrega eventos a cada red social para abrir su enlace en una nueva pestaña del navegador
 
-    // Ocultar el cuerpo del chat al cargar la página
-    chatContainer.style.display = 'none';
+// Facebook
+document.getElementById('facebook').addEventListener('click', function () {
+    window.open("http://www.facebook.com/tecnologicode.tuxtepec", "_blank"); // Abre Facebook
+});
 
-    // Mostrar/ocultar el chat al hacer clic en el botón
-    chatToggle.addEventListener('click', function () {
-        chatContainer.style.display = (chatContainer.style.display === 'none') ? 'block' : 'none';
+// Instagram
+document.getElementById('instagram').addEventListener('click', function () {
+    window.open("https://www.instagram.com/tecnm_tuxtepec", "_blank"); // Abre Instagram
+});
+
+// WhatsApp
+document.getElementById('whatsapp').addEventListener('click', function () {
+    window.open("https://wa.me/+522871104437", "_blank"); // Abre conversación de WhatsApp
+});
+
+// YouTube
+document.getElementById('youtube').addEventListener('click', function () {
+    window.open("https://www.youtube.com/@tecnologiconacionaldemexic7515", "_blank"); // Abre canal de YouTube
+});
+
+// Twitter (X)
+document.getElementById('twitter').addEventListener('click', function () {
+    window.open("https://x.com/ittuxtepec", "_blank"); // Abre perfil de Twitter (X)
+});
+
+// TikTok
+document.getElementById('tiktok').addEventListener('click', function () {
+    window.open("https://www.tiktok.com/@tecnmcampustuxtepec?lang=es", "_blank"); // Abre perfil de TikTok
+});
+
+// Esperar a que el DOM esté completamente cargado
+  document.addEventListener("DOMContentLoaded", function () {
+    // Referencias a los elementos importantes del DOM
+    const chatToggle = document.getElementById("chat-toggle"); // Botón para abrir/cerrar el chatbot
+    const chatContainer = document.getElementById("chat-container"); // Contenedor principal del chatbot
+    const sendBtn = document.getElementById("send-btn"); // Botón para enviar mensaje
+    const userInput = document.getElementById("user-input"); // Campo de texto del usuario
+    const chatBody = document.getElementById("chat-body"); // Zona donde aparecen los mensajes
+
+    // Alternar visibilidad del chatbot cuando se hace clic en el botón
+    chatToggle.addEventListener("click", function () {
+      // Si está oculto, mostrarlo; si está visible, ocultarlo
+      chatContainer.style.display = (chatContainer.style.display === "none") ? "block" : "none";
     });
+
+    // Enviar mensaje al hacer clic en el botón "Enviar"
+    sendBtn.addEventListener("click", function () {
+      const message = userInput.value.trim(); // Obtener y limpiar el texto ingresado
+      if (message !== "") {
+        appendMessage("usuario", message); // Agregar mensaje del usuario al chat
+        userInput.value = ""; // Limpiar el campo de entrada
+        setTimeout(() => {
+          responderMensaje(message); // Llamar a la función que responde según lo que se escribió
+        }, 500); // Retraso para simular respuesta del bot
+      }
+    });
+
+    // También permitir enviar mensaje presionando Enter
+    userInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        sendBtn.click(); // Simula clic en el botón de enviar
+      }
+    });
+
+    // Función para agregar un mensaje al chat (usuario o bot)
+    function appendMessage(sender, text) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("chat-message", sender); // Aplica clases CSS
+      messageDiv.textContent = text;
+      chatBody.appendChild(messageDiv); // Agrega al chat
+      chatBody.scrollTop = chatBody.scrollHeight; // Baja automáticamente al final
+    }
+
+    // Función que genera la respuesta del bot según el mensaje del usuario
+    function responderMensaje(texto) {
+      const mensaje = texto.toLowerCase(); // Convertir todo a minúsculas para comparar
 
     // Respuestas automáticas
     const respuestas = {
