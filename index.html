@@ -100,67 +100,22 @@
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Referencias a los elementos
-    const chatbotBtn = document.getElementById('chatbot-btn'); // Botón de abrir/cerrar
-    const chatContainer = document.getElementById('chat-container'); // Contenedor del chatbot
-
-    // Al hacer clic en el botón, alterna entre mostrar u ocultar el chatbot
-    chatbotBtn.addEventListener('click', function () {
-        const isHidden = chatContainer.style.display === 'none' || chatContainer.style.display === '';
-        chatContainer.style.display = isHidden ? 'flex' : 'none'; // Muestra si estaba oculto y viceversa
-        chatbotBtn.classList.toggle('active'); // Cambia clase si quieres aplicar estilos cuando está activo
-    });
-    // Mostrar el mensaje de redes como si fuera del bot
-    appendMessage('Jaguar Asistente', redesSocialesHTML, 'bot');
-});
-
-// ==========================================
-//        LÓGICA DEL BOTÓN Y EL CHATBOT
-// ==========================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Referencia al botón que muestra/oculta el chatbot
-    const chatbotBtn = document.getElementById('chatbot-btn');
+    const chatToggle = document.getElementById('chat-toggle');
     const chatContainer = document.getElementById('chat-container');
-    // Mostrar u ocultar el chatbot al hacer clic en el botón
-    chatbotBtn.addEventListener('click', function () {
-        chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'flex' : 'none';
-        chatbotBtn.classList.toggle('active');
-    });
-    // Referencias a los elementos del input y botón de envío
     const sendBtn = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
     const chatBody = document.getElementById('chat-body');
-    // Enviar mensaje al hacer clic en el botón "Enviar"
-    sendBtn.addEventListener('click', function () {
-        const message = userInput.value.trim();
-        if (message !== '') {
-            appendMessage('Tú', message, 'user'); // Muestra el mensaje del usuario
-            respondToMessage(message);            // Responde automáticamente
-            userInput.value = '';                 // Limpia el input
-        }
-    });
-    // Permite enviar mensaje presionando "Enter"
-    userInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            sendBtn.click();
-        }
-    });
-    // Función para agregar mensajes al chat
-    function appendMessage(sender, text, type) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message', type);
-        messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
-        chatBody.appendChild(messageElement);
-        chatBody.scrollTop = chatBody.scrollHeight; // Hace scroll al final
-    }
-    // Función principal que responde a los mensajes del usuario
-    function respondToMessage(message) {
-        const msg = message.toLowerCase(); // Convierte todo a minúsculas para facilitar la comparación
-        let respuestaEncontrada = "Lo siento, no entendí tu mensaje. ¿Podrías intentar de nuevo?";
 
-        // Arreglo de posibles respuestas automáticas con palabras clave
-        const respuestas = [
+    // Ocultar el cuerpo del chat al cargar la página
+    chatContainer.style.display = 'none';
+
+    // Mostrar/ocultar el chat al hacer clic en el botón
+    chatToggle.addEventListener('click', function () {
+        chatContainer.style.display = (chatContainer.style.display === 'none') ? 'block' : 'none';
+    });
+
+    // Respuestas automáticas
+    const respuestas = {
     { keywords: ["carreras", "licenciatura", "ingeniería"], 
     respuesta: `
         Ofrecemos las siguientes carreras:
@@ -296,32 +251,50 @@ document.addEventListener('DOMContentLoaded', function () {
                 { keywords: ["horario", "horarios", "atención", "atenciones"], respuesta: "Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 16:00 hrs"
                 },
 
-    ];
-                    for (let item of respuestas) {
-                        if (item.keywords.some(keyword => mensaje.includes(keyword))) {
-                            respuestaEncontrada = item.respuesta;
-                            break;
-                        }
-                    }
+    ]; 
+        // Función para mostrar un mensaje en el chat
+    function mostrarMensaje(mensaje, tipo) {
+        const div = document.createElement('div');
+        div.classList.add('chat-message', tipo === 'usuario' ? 'usuario' : 'bot');
+        div.textContent = mensaje;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
 
-                    setTimeout(() => {
-                        chatBody.innerHTML += `<div><b>IA:</b> ${respuestaEncontrada}</div>`;
-                        chatBody.scrollTop = chatBody.scrollHeight;
-                    }, 500);
-                }
-                input.value = '';
-                input.focus();
+    // Función para responder al mensaje del usuario
+    function responderMensaje(mensaje) {
+        mostrarMensaje(mensaje, 'usuario');
+
+        const mensajeLower = mensaje.toLowerCase();
+        let respuesta = "Lo siento, no entiendo tu mensaje. ¿Puedes reformularlo?";
+
+        for (const palabra in respuestas) {
+            if (mensajeLower.includes(palabra)) {
+                respuesta = respuestas[palabra];
+                break;
             }
+        }
 
-            document.getElementById('send-btn').addEventListener('click', procesarMensaje);
-            document.getElementById('chat-input').addEventListener('keydown', function (event) {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    procesarMensaje();
-                }
+        setTimeout(() => mostrarMensaje(respuesta, 'bot'), 500);
+    }
 
-            });
-        });
+    // Evento al hacer clic en el botón de enviar
+    sendBtn.addEventListener('click', function () {
+        const mensaje = userInput.value.trim();
+        if (mensaje !== '') {
+            responderMensaje(mensaje);
+            userInput.value = '';
+            userInput.focus();
+        }
+    });
+
+    // Permitir enviar con Enter
+    userInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            sendBtn.click();
+        }
+    });
+});
     </script>
 </body>
 </html>
