@@ -124,78 +124,40 @@
 /* ===========================================
         CHATBOT INTELIGENCIA ARTIFICIAL
 =========================================== */
-
-/* Contenedor del chatbot */
-#chat-container {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 320px;
-    height: 400px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    padding: 0;
-    border-radius: 10px;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+/* Estilo general del contenedor del chatbot */
+.chatbot-container {
+  position: fixed;              /* Se queda fijo en pantalla */
+  bottom: 20px;                 /* A 20px del borde inferior */
+  right: 20px;                  /* A 20px del borde derecho */
+  width: 320px;                 /* Ancho del chatbot */
+  border: 1px solid #ccc;       /* Borde gris claro */
+  border-radius: 10px;          /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra suave */
+  background-color: white;      /* Fondo blanco */
+  z-index: 9999;                /* Encima de todo */
+  display: none;                /* Oculto por defecto */
 }
 
-/* Cabecera del chatbot */
-.chat-header {
-    background: #007BFF;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+/* Estilo para los mensajes del chat */
+.chat-message {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  word-wrap: break-word;        /* Evita que el texto se desborde */
 }
 
-/* Cuerpo del chatbot (mensajes) */
-.chat-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid #ccc;
+/* Mensajes del usuario (alineados a la derecha) */
+.chat-message.usuario {
+  background-color: #cce5ff;    /* Azul claro */
+  align-self: flex-end;
+  text-align: right;
 }
 
-/* Pie del chatbot (input y botón) */
-.chat-footer {
-    display: flex;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-/* Input de mensaje */
-.chat-footer input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-
-/* Botón de enviar mensaje */
-.chat-footer button {
-    background: #09386b;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.chat-footer button:hover {
-    background: #0056b3; /* Cambio de color al pasar el mouse */
+/* Mensajes del bot (alineados a la izquierda) */
+.chat-message.bot {
+  background-color: #e2e3e5;    /* Gris claro */
+  align-self: flex-start;
 }
 
 
