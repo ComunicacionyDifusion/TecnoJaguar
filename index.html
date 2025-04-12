@@ -99,8 +99,6 @@
     });
 });
 
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     // Referencias a los elementos
     const chatbotBtn = document.getElementById('chatbot-btn'); // Botón de abrir/cerrar
@@ -112,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         chatContainer.style.display = isHidden ? 'flex' : 'none'; // Muestra si estaba oculto y viceversa
         chatbotBtn.classList.toggle('active'); // Cambia clase si quieres aplicar estilos cuando está activo
     });
-});
     // Mostrar el mensaje de redes como si fuera del bot
     appendMessage('Jaguar Asistente', redesSocialesHTML, 'bot');
 });
