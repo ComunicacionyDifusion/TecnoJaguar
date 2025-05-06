@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -28,147 +28,124 @@
                     </button>
                 </li>
                 <!-- Botón de contacto con menú desplegable -->
-<li class="nav-item contact-container position-relative">
-  <a id="contacto-nav" class="nav-link" href="#">Contacto</a>
-
-  <!-- Menú desplegable de redes sociales -->
-  <div class="social-container" id="socials" style="display: none; position: absolute; background: white; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-    <a href="http://www.facebook.com/tecnologicode.tuxtepec" id="facebook" target="_blank">
-      <i class="fab fa-facebook"></i> Facebook
-    </a><br>
-    <a href="https://wa.me/+522871104437" id="whatsapp" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a><br>
-    <a href="https://x.com/ittuxtepec" id="twitter" target="_blank">
-      <i class="fab fa-twitter"></i> X (Twitter)
-    </a><br>
-    <a href="https://instagram.com/tecnm_tuxtepec" id="instagram" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a><br>
-    <a href="https://tiktok.com/@tecnmcampustuxtepec" id="tiktok" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a><br>
-    <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" id="youtube" target="_blank">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
-  </div>
-</li>
-                        <li class="nav-item">
-                            <button id="chatbot-btn" class="btn btn-outline-light">
-                                <i class="fas fa-robot"></i> IA Chatbot
-                            </button>
-                        </li>
+                <li class="nav-item contact-container position-relative">
+                    <a id="contacto-nav" class="nav-link" href="#">Contacto</a>
+                    <!-- Menú desplegable de redes sociales -->
+                    <div class="social-container" id="socials" style="display: none; position: absolute; background: white; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+                        <a href="http://www.facebook.com/tecnologicode.tuxtepec" id="facebook" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a><br>
+                        <a href="https://wa.me/+522871104437" id="whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a><br>
+                        <a href="https://x.com/ittuxtepec" id="twitter" target="_blank">
+                            <i class="fab fa-twitter"></i> X (Twitter)
+                        </a><br>
+                        <a href="https://instagram.com/tecnm_tuxtepec" id="instagram" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a><br>
+                        <a href="https://tiktok.com/@tecnmcampustuxtepec" id="tiktok" target="_blank">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a><br>
+                        <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" id="youtube" target="_blank">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button id="chatbot-btn" class="btn btn-outline-light">
+                        <i class="fas fa-robot"></i> IA Chatbot
+                    </button>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-    <!-- Sección de TecnoJaguar -->
-        <section class="hero">
-            <h1>TecnoJaguar</h1>
-        </section>
 
-    <!-- Imagen de marca de agua centrada -->
-    <img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+<!-- Sección de TecnoJaguar -->
+<section class="hero">
+    <h1>TecnoJaguar</h1>
+</section>
 
-<!-- JavaScript básico -->
+<!-- Imagen de marca de agua centrada -->
+<img src="Logo 50 Aniversario con contorno.png" alt="Marca de Agua" class="watermark">
+
+    <!-- JavaScript básico -->
 <script>
-    // Redirección al inicio
-    document.getElementById('inicio').addEventListener('click', function () { 
-        window.location.href = "index.html"; 
+document.addEventListener("DOMContentLoaded", function () {
+    // Navegación
+    document.getElementById('inicio').addEventListener('click', () => {
+        window.location.href = "index.html";
     });
 
- // Mostrar/ocultar redes sociales al hacer clic en el botón "Contacto"
-document.getElementById('contacto-nav').addEventListener('click', function () {
-    // Obtiene el contenedor que muestra las redes sociales
-    let socialBox = document.getElementById("socials");
-
-    // Alterna el valor de 'display': si está oculto, lo muestra; si está visible, lo oculta
-    socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
-});
-
-// Agrega eventos a cada red social para abrir su enlace en una nueva pestaña del navegador
-
-// Facebook
-document.getElementById('facebook').addEventListener('click', function () {
-    window.open("http://www.facebook.com/tecnologicode.tuxtepec", "_blank"); // Abre Facebook
-});
-
-// Instagram
-document.getElementById('instagram').addEventListener('click', function () {
-    window.open("https://www.instagram.com/tecnm_tuxtepec", "_blank"); // Abre Instagram
-});
-
-// WhatsApp
-document.getElementById('whatsapp').addEventListener('click', function () {
-    window.open("https://wa.me/+522871104437", "_blank"); // Abre conversación de WhatsApp
-});
-
-// YouTube
-document.getElementById('youtube').addEventListener('click', function () {
-    window.open("https://www.youtube.com/@tecnologiconacionaldemexic7515", "_blank"); // Abre canal de YouTube
-});
-
-// Twitter (X)
-document.getElementById('twitter').addEventListener('click', function () {
-    window.open("https://x.com/ittuxtepec", "_blank"); // Abre perfil de Twitter (X)
-});
-
-// TikTok
-document.getElementById('tiktok').addEventListener('click', function () {
-    window.open("https://www.tiktok.com/@tecnmcampustuxtepec?lang=es", "_blank"); // Abre perfil de TikTok
-});
-
-// Esperar a que el DOM esté completamente cargado
-  document.addEventListener("DOMContentLoaded", function () {
-    // Referencias a los elementos importantes del DOM
-    const chatToggle = document.getElementById("chat-toggle"); // Botón para abrir/cerrar el chatbot
-    const chatContainer = document.getElementById("chat-container"); // Contenedor principal del chatbot
-    const sendBtn = document.getElementById("send-btn"); // Botón para enviar mensaje
-    const userInput = document.getElementById("user-input"); // Campo de texto del usuario
-    const chatBody = document.getElementById("chat-body"); // Zona donde aparecen los mensajes
-
-    // Alternar visibilidad del chatbot cuando se hace clic en el botón
-    chatToggle.addEventListener("click", function () {
-      // Si está oculto, mostrarlo; si está visible, ocultarlo
-      chatContainer.style.display = (chatContainer.style.display === "none") ? "block" : "none";
+    document.getElementById('contacto-nav').addEventListener('click', () => {
+        const socialBox = document.getElementById("socials");
+        socialBox.style.display = (socialBox.style.display === "none" || socialBox.style.display === "") ? "block" : "none";
     });
 
-    // Enviar mensaje al hacer clic en el botón "Enviar"
-    sendBtn.addEventListener("click", function () {
-      const message = userInput.value.trim(); // Obtener y limpiar el texto ingresado
-      if (message !== "") {
-        appendMessage("usuario", message); // Agregar mensaje del usuario al chat
-        userInput.value = ""; // Limpiar el campo de entrada
-        setTimeout(() => {
-          responderMensaje(message); // Llamar a la función que responde según lo que se escribió
-        }, 500); // Retraso para simular respuesta del bot
-      }
+    // Redes sociales
+    const redes = {
+        facebook: "http://www.facebook.com/tecnologicode.tuxtepec",
+        instagram: "https://www.instagram.com/tecnm_tuxtepec",
+        whatsapp: "https://wa.me/+522871104437",
+        youtube: "https://www.youtube.com/@tecnologiconacionaldemexic7515",
+        twitter: "https://x.com/ittuxtepec",
+        tiktok: "https://www.tiktok.com/@tecnmcampustuxtepec?lang=es"
+    };
+
+    Object.entries(redes).forEach(([id, url]) => {
+        const elem = document.getElementById(id);
+        if (elem) {
+            elem.addEventListener('click', () => window.open(url, "_blank"));
+        }
     });
 
-    // También permitir enviar mensaje presionando Enter
-    userInput.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        sendBtn.click(); // Simula clic en el botón de enviar
-      }
+    // Chatbot
+    const chatToggle = document.getElementById("chat-toggle");
+    const chatContainer = document.getElementById("chat-container");
+    const sendBtn = document.getElementById("send-btn");
+    const userInput = document.getElementById("user-input");
+    const chatBody = document.getElementById("chat-body");
+
+    chatToggle.addEventListener("click", () => {
+        chatContainer.style.display = (chatContainer.style.display === "none") ? "block" : "none";
     });
 
-    // Función para agregar un mensaje al chat (usuario o bot)
+    sendBtn.addEventListener("click", enviarMensaje);
+    userInput.addEventListener("keypress", e => {
+        if (e.key === "Enter") enviarMensaje();
+    });
+
     function appendMessage(sender, text) {
-      const messageDiv = document.createElement("div");
-      messageDiv.classList.add("chat-message", sender); // Aplica clases CSS
-      messageDiv.textContent = text;
-      chatBody.appendChild(messageDiv); // Agrega al chat
-      chatBody.scrollTop = chatBody.scrollHeight; // Baja automáticamente al final
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("chat-message", sender);
+        messageDiv.innerHTML = text;
+        chatBody.appendChild(messageDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
     }
 
-    // Función que genera la respuesta del bot según el mensaje del usuario
-    function responderMensaje(texto) {
-      const mensaje = texto.toLowerCase(); // Convertir todo a minúsculas para comparar
+    function enviarMensaje() {
+        const message = userInput.value.trim();
+        if (message === "") return;
+        appendMessage("usuario", message);
+        userInput.value = "";
+        setTimeout(() => responderMensaje(message), 500);
+    }
 
-    // Respuestas automáticas
-    const respuestas = {
-    { keywords: ["carreras", "licenciatura", "ingeniería"], 
+    const respuestas = [
+        {
+            keywords: ["hola", "buenas", "saludos"],
+            respuesta: "¡Hola! Soy tu Jaguar Asistente, ¿En qué puedo ayudarte? 😊"
+        },
+        {
+            keywords: ["gracias", "thanks"],
+            respuesta: "¡De nada! Estamos para servirte 😊"
+        },
+        {
+            keywords: ["adiós", "bye"],
+            respuesta: "¡Hasta luego! cualquier duda estaremos a tu disposición 😊"
+        },
+        { keywords: ["carreras", "licenciatura", "ingeniería"], 
     respuesta: `
         Ofrecemos las siguientes carreras:
         <ul>
@@ -183,29 +160,27 @@ document.getElementById('tiktok').addEventListener('click', function () {
             <li><a href="https://www.tuxtepec.tecnm.mx/contador.html" target="_blank"><i class="fas fa-calculator"></i> Licenciatura en Contador Público</a></li>
             <li><a href="https://www.tuxtepec.tecnm.mx/administracion.html" target="_blank"><i class="fas fa-briefcase"></i> Licenciatura en Administración</a></li>
         </ul>
-        📚 ¡Da clic en cada carrera para más información    
+                📚 ¡Da clic en cada carrera para más información!`
        <p>También contamos con una extensión en Loma Bonita.</p> 
                             `},
-                        { keywords: ["hola", "buenas", "saludos"], respuesta: "¡Hola! Soy tu Jaguar Asistenre, ¿En qué puedo ayudarte?😊" },
-                        { keywords: ["gracias", "thanks"], respuesta: "¡De nada! 😊" },
-                        { keywords: ["adiós", "bye"], respuesta: "¡Hasta luego! 😊" },
-                        { keywords: ["especialidad"], respuesta: "Si contamos con una especialidad de Semiconductores" },
-                        { keywords: ["maestría", "maestria", "maestrias", "maestrías"],
-                                    respuesta: `
-                                    🎓 Contamos con los siguientes programas de posgrado:
-                                        <ul>
-                                            <li>
-                                                <a href="https://maestrias.tuxtepec.tecnm.mx/alimentos/" target="_blank">
-                                                    <i class="fas fa-apple-alt"></i> Maestría en Ciencias en Alimentos</a></li>
-                                            <li>
-                                                <a href="https://maestrias.tuxtepec.tecnm.mx/administracion/" target="_blank">
-                                                    <i class="fas fa-briefcase"></i> Maestría en Administración</a></li>
-                                            <li>
-                                                <a href="https://maestrias.tuxtepec.tecnm.mx/economia/" target="_blank">
-                                                    <i class="fas fa-hand-holding-usd"></i> Maestría en Economía Social y Solidaria</a></li>
-                                        </ul>
-                                                `},
-            { keywords: ["contacto", "redes sociales", "contactar"],
+        {
+            keywords: ["especialidad", "especialidades"],
+            respuesta: `
+                📘 Contamos con la especialidad:
+                <a href="https://maestrias.tuxtepec.tecnm.mx/especialidad/" target="_blank">Especialidad en Semiconductores</a>
+            `
+        },
+        {
+            keywords: ["maestría", "maestrias"],
+            respuesta: `
+                🎓 Programas de posgrado:
+                <ul>
+                    <li><a href="https://maestrias.tuxtepec.tecnm.mx/alimentos/" target="_blank">Maestría en Ciencias en Alimentos</a></li>
+                    <li><a href="https://maestrias.tuxtepec.tecnm.mx/administracion/" target="_blank">Maestría en Administración</a></li>
+                    <li><a href="https://maestrias.tuxtepec.tecnm.mx/economia/" target="_blank">Maestría en Economía Social y Solidaria</a></li>
+                </ul>`
+        },
+        { keywords: ["contacto", "redes sociales", "contactar"],
   respuesta: `
     Puedes contactarnos a través de nuestras redes sociales:
         <br><a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></br>
@@ -215,40 +190,31 @@ document.getElementById('tiktok').addEventListener('click', function () {
         <br><a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a></br>
         <br><a href="https://www.tiktok.com/@tecnmcampustuxtepec?lang=es" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></br>
   `}
-
-   { keywords: ["especialidad", "especialidades"], 
-  respuesta: `
-    📘 Contamos con la siguiente especialidad profesional:<br>
-    <a href="https://maestrias.tuxtepec.tecnm.mx/especialidad/" target="_blank">
-        <i class="fas fa-microchip"></i> Especialidad en Semiconductores
-    </a>
-    `},
-
-                        { keywords: ["contacto", "redes sociales", "contactar"], respuesta: `
-                    <div class="dropdown">
-                        <button class="btn btn-primary">Síguenos en Nuestras Redes Sociales</button>
-                        <div class="dropdown-content">
-                            <a href="http://www.facebook.com/tecnologicode.tuxtepec" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-                            <a href="https://wa.me/+522871104437" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                            <a href="https://x.com/ittuxtepec" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-                            <a href="https://instagram.com/tecnm_tuxtepec" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                            <a href="https://tiktok.com/@tecnmcampustuxtepec" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                            <a href="https://www.youtube.com/@tecnologiconacionaldemexic7515" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                        </div>
-                    </div>` 
-                },
-                { keywords: ["examen de admisión","examen de admision"], respuesta: "el simulacro se llevara acabo el 17 de julio del 2025 y posteriormente el dia 18 de julio del presente año se llevara el examen" 
-                            }, 
-                { keywords: ["ficha de admision","fichas"], respuesta: `
-                            La ficha de admisión puedes sacarla hasta el 11 de Julio del presente año tiene un costo de $900.00 MXN (Para ambas modalidades y la extension en Loma Bonita).
-                           ` },
-                { keywords: ["curso de homogeneizacion"], respuesta: `
-                            El curso de homogeneización tiene un costo de $1,500.00 MXN(Escolarizado) y $1,000(Escolarizado-Sabatino); en la extencion en Loma Bonita es de $1,000 (Escolarizado-Sabatino).
-                            ` },
-                { keywords: ["inscripcion"], respuesta: `
-                            La inscripción tiene un costo de $2,100MXN (Escolarizado) y $3,500.00 MXN (Escolarizado-Sabatino y en la Extension de Loma Bonita).
-                            ` },
-                { keywords: ["Carreras sabatinos", "sabatico", "sabatinas", "Sabaticas"],
+        {
+            keywords: ["examen de admisión"],
+            respuesta: "El simulacro será el 17 de julio de 2025 y el examen oficial el 18 de julio de 2025."
+        },
+        {
+            keywords: ["ficha de admision", "fichas"],
+            respuesta: "La ficha puedes obtenerla hasta el 11 de julio de 2025. Costo: $900.00 MXN."
+        },
+        {
+            keywords: ["curso de homogeneizacion"],
+            respuesta: "Costo: $1,500 (Escolarizado), $1,000 (Escolarizado-Sabatino y extensión de Loma Bonita)."
+        },
+        {
+            keywords: ["inscripcion"],
+            respuesta: "Costo de inscripción: $2,100 MXN (Escolarizado) y $3,500 MXN (Sabatino y extensión de Loma Bonita)."
+        },
+        {
+            keywords: ["curso de induccion"],
+            respuesta: "Se realizará del 21 al 25 de julio de 2025 de forma PRESENCIAL."
+        },
+        {
+            keywords: ["horario", "atención"],
+            respuesta: "Horario de atención: Lunes a Viernes de 9:00 a 16:00 hrs."
+        },
+            { keywords: ["Carreras sabatinos", "sabatico", "sabatinas", "Sabaticas"],
     respuesta: `
         Nuestras carreras sabatinas son:
         <ul>
@@ -271,82 +237,44 @@ document.getElementById('tiktok').addEventListener('click', function () {
             </li>
         </ul>
     `},
-{ keywords: ["Curso de Induccion"], respuesta: "El curso se llevará a cabo de manera PRESENCIAL del 21 al 25 de Julio del 2025, te invitamos a estar al pendiente en nuestras redes sociales."
+                { keywords: ["Curso de Induccion"], respuesta: "El curso se llevará a cabo de manera PRESENCIAL del 21 al 25 de Julio del 2025, te invitamos a estar al pendiente en nuestras redes sociales."
 },
                 { keywords: ["costo", "cuota", "pago","pagar"], respuesta: `
                 Puedes realizar el pago de las siguientes maneras:  
-            🔹 **Transferencia o Depósito Bancario**        
-                - **Banco:** Santander  
-                - **Número de cuenta:** 65-507172002  
-                - **CLABE interbancaria:** 014855655071720028
-                - **Beneficiario:** TNM/Instituto Tecnológico de Tuxtepec. 
+            🔹 *Transferencia o Depósito Bancario*        
+                - *Banco:* Santander  
+                - *Número de cuenta:* 65-507172002  
+                - *CLABE interbancaria:* 014855655071720028
+                - *Beneficiario:* TNM/Instituto Tecnológico de Tuxtepec. 
         
-        🔹 **Pago con tarjeta** TUXTEPEC: En las Instalaciones del TecNM Tuxtepec de Lunes a Viernes de 9:00 a 15:30 Hrs. (excepto el último día del mes).  
+        🔹 *Pago con tarjeta* TUXTEPEC: En las Instalaciones del TecNM Tuxtepec de Lunes a Viernes de 9:00 a 15:30 Hrs. (excepto el último día del mes).  
                                 LOMA BONITA: En las Instalaciones de módulo del H. Ayuntamiento de Loma Bonita, los días Lunes, Miércoles y Sábados de 9:00 a 15:30 Hrs. (excepto el último día del mes).
-
                             DE FORMA PRESENCIAL
             Acudir al Departamento de Recursos Financieros del Tecnológico de Tuxtepec
             a canjear el comprobante de pago por el recibo oficial de cobro, anotando en el
             mismo.
-            
             - Nombre completo
             - Número de Pre Ficha.
-            
-            
-            ⚠️ *Nota:* Si realiza el pago con Tarjeta de débito o crédito en el departamento de Recursos Financieros del Instituto Tecnológico de Tuxtepec, ya no es necesario realizar el canje, puesto que le entregarán directamente su recibo oficial de cobro. 
-            
-            AVISO IMPORTANTE
+        
+            ⚠️ Nota: Si realiza el pago con Tarjeta de débito o crédito en el departamento de Recursos Financieros del Instituto Tecnológico de Tuxtepec, ya no es necesario realizar el canje, puesto que le entregarán directamente su recibo oficial de cobro. 
+                            AVISO IMPORTANTE
             - Cada comprobante de pago es personal e intransferible, avala el pago realizado por el estudiante y el concepto indicado en el mismo.
-            - Efectuado el pago/deposito/transferencia electrónica no habrá reembolso, es responsabilidad del interesado realizar correctamente su trámite.
-
+            - Efectuado el pago/deposito/transferencia electrónica no habrá reembolso, es responsabilidad del interesado realizar correctamente su trámite
     ` },
-                { keywords: ["horario", "horarios", "atención", "atenciones"], respuesta: "Nuestro horario de atencion es de Lunes a Viernes de 09:00 a 16:00 hrs"
-                },
+                    
+    ];
 
-    ]; 
-        // Función para mostrar un mensaje en el chat
-    function mostrarMensaje(mensaje, tipo) {
-        const div = document.createElement('div');
-        div.classList.add('chat-message', tipo === 'usuario' ? 'usuario' : 'bot');
-        div.textContent = mensaje;
-        chatBody.appendChild(div);
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    // Función para responder al mensaje del usuario
     function responderMensaje(mensaje) {
-        mostrarMensaje(mensaje, 'usuario');
-
         const mensajeLower = mensaje.toLowerCase();
-        let respuesta = "Lo siento, no entiendo tu mensaje. ¿Puedes reformularlo?";
-
-        for (const palabra in respuestas) {
-            if (mensajeLower.includes(palabra)) {
-                respuesta = respuestas[palabra];
-                break;
+        for (let item of respuestas) {
+            if (item.keywords.some(k => mensajeLower.includes(k))) {
+                appendMessage("bot", item.respuesta);
+                return;
             }
         }
-
-        setTimeout(() => mostrarMensaje(respuesta, 'bot'), 500);
+        appendMessage("bot", "Lo siento, no entiendo tu mensaje. Por favor específica tu pregunta de nuevo.");
     }
-
-    // Evento al hacer clic en el botón de enviar
-    sendBtn.addEventListener('click', function () {
-        const mensaje = userInput.value.trim();
-        if (mensaje !== '') {
-            responderMensaje(mensaje);
-            userInput.value = '';
-            userInput.focus();
-        }
-    });
-
-    // Permitir enviar con Enter
-    userInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            sendBtn.click();
-        }
-    });
 });
-    </script>
+</script>
 </body>
 </html>
